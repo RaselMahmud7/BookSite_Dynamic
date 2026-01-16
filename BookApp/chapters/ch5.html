@@ -1,0 +1,328 @@
+<section class="reveal rounded-2xl border border-white/10 bg-white/5 p-6 sm:p-8">
+  <h2 class="text-2xl sm:text-3xl font-extrabold">অধ্যায় ৫: লিস্ট (Python List) — একসাথে অনেক ডেটা</h2>
+
+  <p class="mt-4 text-slate-200/85">
+    একসাথে অনেকগুলো ডেটা রাখতে চাইলে Python-এ আমরা <span class="font-bold">List</span> ব্যবহার করি।
+    List হলো <span class="font-bold">ordered</span> collection — মানে, ভিতরের আইটেমগুলোর একটা নির্দিষ্ট ক্রম থাকে।
+    List-এর সবচেয়ে ভালো দিক: তুমি চাইলে <span class="font-bold">নতুন আইটেম যোগ</span> করতে পারো,
+    <span class="font-bold">মুছে ফেলতে</span> পারো, <span class="font-bold">পরিবর্তন</span> করতে পারো।
+  </p>
+
+  <!-- Key properties -->
+  <div class="mt-5 rounded-xl bg-blue-500/10 ring-1 ring-blue-400/20 p-4 text-slate-200/90">
+    <div class="font-extrabold text-blue-200">List-এর বৈশিষ্ট্য (Must Know)</div>
+    <ul class="mt-2 list-disc pl-6 space-y-1">
+      <li><span class="font-bold">Ordered</span> → index আছে (0 থেকে শুরু)</li>
+      <li><span class="font-bold">Mutable</span> → value বদলানো যায়</li>
+      <li><span class="font-bold">Duplicate</span> থাকতে পারে</li>
+      <li><span class="font-bold">Mixed types</span> রাখা যায় (int, str, bool এক লিস্টে)</li>
+    </ul>
+  </div>
+
+  <!-- Create + index -->
+  <h3 class="mt-10 text-xl font-extrabold">১) List তৈরি + Index দিয়ে দেখা</h3>
+  <p class="mt-3 text-slate-200/85">
+    List বানাতে <span class="font-mono">[ ]</span> ব্যবহার হয়।
+    প্রথম আইটেমের index <span class="font-mono">0</span>।
+    শেষ আইটেম পেতে <span class="font-mono">-1</span> ব্যবহার করা যায়।
+  </p>
+
+  <div class="mt-4 editor">
+    <div class="editor-top px-4 py-3 flex items-center justify-between gap-3">
+      <div class="flex items-center gap-2">
+        <span class="dot" style="background:#ff5f57"></span>
+        <span class="dot" style="background:#febc2e"></span>
+        <span class="dot" style="background:#28c840"></span>
+        <span class="ml-2 text-xs text-slate-200/85">lists_basic.py</span>
+      </div>
+      <button class="rounded-lg bg-white/10 hover:bg-white/15 px-3 py-1.5 text-xs font-bold ring-1 ring-white/10 transition"
+        data-copy="ch5-code-0">Copy</button>
+    </div>
+
+    <div class="grid lg:grid-cols-2">
+      <div class="p-4">
+        <div class="text-xs font-bold text-slate-300/80 mb-2">Code</div>
+        <pre id="ch5-code-0" class="code-area text-slate-100 whitespace-pre overflow-x-auto"><code>fruits = ["Apple", "Orange", "Banana", "Guava"]
+
+print("All:", fruits)
+print("First:", fruits[0])
+print("Last:", fruits[-1])</code></pre>
+      </div>
+
+      <div class="p-4 border-t lg:border-t-0 lg:border-l border-white/10 bg-white/5">
+        <div class="text-xs font-bold text-slate-300/80 mb-2">OUTPUT</div>
+        <pre class="out-area text-emerald-200 whitespace-pre overflow-x-auto">All: ['Apple', 'Orange', 'Banana', 'Guava']
+First: Apple
+Last: Guava</pre>
+      </div>
+    </div>
+  </div>
+
+  <!-- len + modify -->
+  <h3 class="mt-10 text-xl font-extrabold">২) List-এর দৈর্ঘ্য (len) + Item পরিবর্তন</h3>
+  <p class="mt-3 text-slate-200/85">
+    List-এ কতগুলো item আছে জানতে <span class="font-mono">len()</span> ব্যবহার হয়।
+    আর list mutable, তাই <span class="font-mono">fruits[2] = "Mango"</span> এভাবে value বদলানো যায়।
+  </p>
+
+  <div class="mt-4 editor">
+    <div class="editor-top px-4 py-3 flex items-center justify-between gap-3">
+      <div class="flex items-center gap-2">
+        <span class="dot" style="background:#ff5f57"></span>
+        <span class="dot" style="background:#febc2e"></span>
+        <span class="dot" style="background:#28c840"></span>
+        <span class="ml-2 text-xs text-slate-200/85">len_modify.py</span>
+      </div>
+      <button class="rounded-lg bg-white/10 hover:bg-white/15 px-3 py-1.5 text-xs font-bold ring-1 ring-white/10 transition"
+        data-copy="ch5-code-1a">Copy</button>
+    </div>
+
+    <div class="grid lg:grid-cols-2">
+      <div class="p-4">
+        <div class="text-xs font-bold text-slate-300/80 mb-2">Code</div>
+        <pre id="ch5-code-1a" class="code-area text-slate-100 whitespace-pre overflow-x-auto"><code>fruits = ["Apple", "Orange", "Banana", "Guava"]
+
+print("Length:", len(fruits))
+
+fruits[2] = "Mango"
+print("After change:", fruits)</code></pre>
+      </div>
+
+      <div class="p-4 border-t lg:border-t-0 lg:border-l border-white/10 bg-white/5">
+        <div class="text-xs font-bold text-slate-300/80 mb-2">OUTPUT</div>
+        <pre class="out-area text-emerald-200 whitespace-pre overflow-x-auto">Length: 4
+After change: ['Apple', 'Orange', 'Mango', 'Guava']</pre>
+      </div>
+    </div>
+  </div>
+
+  <!-- add -->
+  <h3 class="mt-10 text-xl font-extrabold">৩) List-এ যোগ করা (append / insert / extend)</h3>
+  <p class="mt-3 text-slate-200/85">
+    <span class="font-mono">append()</span> → শেষে যোগ করে,
+    <span class="font-mono">insert(index, item)</span> → নির্দিষ্ট জায়গায় যোগ করে,
+    <span class="font-mono">extend()</span> → আরেকটা list যোগ করে (একসাথে অনেক item)।
+  </p>
+
+  <div class="mt-4 editor">
+    <div class="editor-top px-4 py-3 flex items-center justify-between gap-3">
+      <div class="flex items-center gap-2">
+        <span class="dot" style="background:#ff5f57"></span>
+        <span class="dot" style="background:#febc2e"></span>
+        <span class="dot" style="background:#28c840"></span>
+        <span class="ml-2 text-xs text-slate-200/85">add_items.py</span>
+      </div>
+      <button class="rounded-lg bg-white/10 hover:bg-white/15 px-3 py-1.5 text-xs font-bold ring-1 ring-white/10 transition"
+        data-copy="ch5-code-1">Copy</button>
+    </div>
+
+    <div class="grid lg:grid-cols-2">
+      <div class="p-4">
+        <div class="text-xs font-bold text-slate-300/80 mb-2">Code</div>
+        <pre id="ch5-code-1" class="code-area text-slate-100 whitespace-pre overflow-x-auto"><code>fruits = ["Apple", "Orange"]
+
+fruits.append("Banana")
+fruits.insert(1, "Pineapple")
+fruits.extend(["Guava", "Mango"])
+
+print(fruits)</code></pre>
+      </div>
+
+      <div class="p-4 border-t lg:border-t-0 lg:border-l border-white/10 bg-white/5">
+        <div class="text-xs font-bold text-slate-300/80 mb-2">OUTPUT</div>
+        <pre class="out-area text-emerald-200 whitespace-pre overflow-x-auto">['Apple', 'Pineapple', 'Orange', 'Banana', 'Guava', 'Mango']</pre>
+      </div>
+    </div>
+  </div>
+
+  <!-- remove -->
+  <h3 class="mt-10 text-xl font-extrabold">৪) List থেকে মুছে ফেলা (remove / pop / del / clear)</h3>
+  <p class="mt-3 text-slate-200/85">
+    <span class="font-mono">remove(item)</span> → নির্দিষ্ট value মুছে ফেলে (প্রথম ম্যাচ),
+    <span class="font-mono">pop(index)</span> → index অনুযায়ী মুছে ফেলে এবং value ফেরত দেয়,
+    <span class="font-mono">del</span> → index দিয়ে ডিলিট,
+    <span class="font-mono">clear()</span> → সব মুছে ফেলে।
+  </p>
+
+  <div class="mt-4 editor">
+    <div class="editor-top px-4 py-3 flex items-center justify-between gap-3">
+      <div class="flex items-center gap-2">
+        <span class="dot" style="background:#ff5f57"></span>
+        <span class="dot" style="background:#febc2e"></span>
+        <span class="dot" style="background:#28c840"></span>
+        <span class="ml-2 text-xs text-slate-200/85">remove_items.py</span>
+      </div>
+      <button class="rounded-lg bg-white/10 hover:bg-white/15 px-3 py-1.5 text-xs font-bold ring-1 ring-white/10 transition"
+        data-copy="ch5-code-2">Copy</button>
+    </div>
+
+    <div class="grid lg:grid-cols-2">
+      <div class="p-4">
+        <div class="text-xs font-bold text-slate-300/80 mb-2">Code</div>
+        <pre id="ch5-code-2" class="code-area text-slate-100 whitespace-pre overflow-x-auto"><code>fruits = ["Apple", "Orange", "Banana", "Guava", "Banana"]
+
+fruits.remove("Banana")     # removes first Banana
+removed = fruits.pop(1)     # removes index 1 and returns it
+del fruits[0]               # deletes item at index 0
+
+print("List:", fruits)
+print("Removed by pop:", removed)</code></pre>
+      </div>
+
+      <div class="p-4 border-t lg:border-t-0 lg:border-l border-white/10 bg-white/5">
+        <div class="text-xs font-bold text-slate-300/80 mb-2">OUTPUT</div>
+        <pre class="out-area text-emerald-200 whitespace-pre overflow-x-auto">List: ['Guava', 'Banana']
+Removed by pop: Orange</pre>
+      </div>
+    </div>
+  </div>
+
+  <!-- slicing -->
+  <h3 class="mt-10 text-xl font-extrabold">৫) Slicing (এক টুকরো অংশ বের করা)</h3>
+  <p class="mt-3 text-slate-200/85">
+    <span class="font-mono">list[start:end]</span> দিয়ে slicing করা যায়।
+    এখানে <span class="font-mono">end</span> indexটা include হয় না (exclude)।
+  </p>
+
+  <div class="mt-4 editor">
+    <div class="editor-top px-4 py-3 flex items-center justify-between gap-3">
+      <div class="flex items-center gap-2">
+        <span class="dot" style="background:#ff5f57"></span>
+        <span class="dot" style="background:#febc2e"></span>
+        <span class="dot" style="background:#28c840"></span>
+        <span class="ml-2 text-xs text-slate-200/85">slicing.py</span>
+      </div>
+      <button class="rounded-lg bg-white/10 hover:bg-white/15 px-3 py-1.5 text-xs font-bold ring-1 ring-white/10 transition"
+        data-copy="ch5-code-3">Copy</button>
+    </div>
+
+    <div class="grid lg:grid-cols-2">
+      <div class="p-4">
+        <div class="text-xs font-bold text-slate-300/80 mb-2">Code</div>
+        <pre id="ch5-code-3" class="code-area text-slate-100 whitespace-pre overflow-x-auto"><code>nums = [10, 20, 30, 40, 50, 60]
+
+print(nums[1:4])   # 20,30,40
+print(nums[:3])    # first 3
+print(nums[3:])    # from index 3 to end
+print(nums[-3:])   # last 3</code></pre>
+      </div>
+
+      <div class="p-4 border-t lg:border-t-0 lg:border-l border-white/10 bg-white/5">
+        <div class="text-xs font-bold text-slate-300/80 mb-2">OUTPUT</div>
+        <pre class="out-area text-emerald-200 whitespace-pre overflow-x-auto">[20, 30, 40]
+[10, 20, 30]
+[40, 50, 60]
+[40, 50, 60]</pre>
+      </div>
+    </div>
+  </div>
+
+  <!-- helpful methods -->
+  <h3 class="mt-10 text-xl font-extrabold">৬) Useful List Methods (কাজের জিনিস)</h3>
+  <div class="mt-4 rounded-xl bg-white/5 ring-1 ring-white/10 p-5 text-slate-200/85">
+    <ul class="list-disc pl-6 space-y-2">
+      <li><span class="font-mono">sort()</span> → ছোট থেকে বড় সাজায় (in-place)</li>
+      <li><span class="font-mono">reverse()</span> → উল্টে দেয়</li>
+      <li><span class="font-mono">count(x)</span> → কতবার আছে</li>
+      <li><span class="font-mono">index(x)</span> → প্রথম কোথায় আছে</li>
+      <li><span class="font-mono">copy()</span> → shallow copy (beginner এ যথেষ্ট)</li>
+    </ul>
+  </div>
+
+  <div class="mt-4 editor">
+    <div class="editor-top px-4 py-3 flex items-center justify-between gap-3">
+      <div class="flex items-center gap-2">
+        <span class="dot" style="background:#ff5f57"></span>
+        <span class="dot" style="background:#febc2e"></span>
+        <span class="dot" style="background:#28c840"></span>
+        <span class="ml-2 text-xs text-slate-200/85">list_methods.py</span>
+      </div>
+      <button class="rounded-lg bg-white/10 hover:bg-white/15 px-3 py-1.5 text-xs font-bold ring-1 ring-white/10 transition"
+        data-copy="ch5-code-4">Copy</button>
+    </div>
+
+    <div class="grid lg:grid-cols-2">
+      <div class="p-4">
+        <div class="text-xs font-bold text-slate-300/80 mb-2">Code</div>
+        <pre id="ch5-code-4" class="code-area text-slate-100 whitespace-pre overflow-x-auto"><code>nums = [5, 2, 9, 2, 1]
+
+print("Count 2:", nums.count(2))
+
+nums.sort()
+print("Sorted:", nums)
+
+nums.reverse()
+print("Reversed:", nums)
+
+print("Index of 9:", nums.index(9))</code></pre>
+      </div>
+
+      <div class="p-4 border-t lg:border-t-0 lg:border-l border-white/10 bg-white/5">
+        <div class="text-xs font-bold text-slate-300/80 mb-2">OUTPUT</div>
+        <pre class="out-area text-emerald-200 whitespace-pre overflow-x-auto">Count 2: 2
+Sorted: [1, 2, 2, 5, 9]
+Reversed: [9, 5, 2, 2, 1]
+Index of 9: 0</pre>
+      </div>
+    </div>
+  </div>
+
+  <!-- Membership -->
+  <h3 class="mt-10 text-xl font-extrabold">৭) in / not in (List-এ আছে কিনা)</h3>
+  <p class="mt-3 text-slate-200/85">
+    কোনো item list-এর ভিতরে আছে কিনা চেক করতে <span class="font-mono">in</span> ব্যবহার করো।
+  </p>
+
+  <div class="mt-4 editor">
+    <div class="editor-top px-4 py-3 flex items-center justify-between gap-3">
+      <div class="flex items-center gap-2">
+        <span class="dot" style="background:#ff5f57"></span>
+        <span class="dot" style="background:#febc2e"></span>
+        <span class="dot" style="background:#28c840"></span>
+        <span class="ml-2 text-xs text-slate-200/85">membership.py</span>
+      </div>
+      <button class="rounded-lg bg-white/10 hover:bg-white/15 px-3 py-1.5 text-xs font-bold ring-1 ring-white/10 transition"
+        data-copy="ch5-code-5">Copy</button>
+    </div>
+
+    <div class="grid lg:grid-cols-2">
+      <div class="p-4">
+        <div class="text-xs font-bold text-slate-300/80 mb-2">Code</div>
+        <pre id="ch5-code-5" class="code-area text-slate-100 whitespace-pre overflow-x-auto"><code>fruits = ["Apple", "Orange", "Banana"]
+
+print("Banana" in fruits)
+print("Mango" not in fruits)</code></pre>
+      </div>
+      <div class="p-4 border-t lg:border-t-0 lg:border-l border-white/10 bg-white/5">
+        <div class="text-xs font-bold text-slate-300/80 mb-2">OUTPUT</div>
+        <pre class="out-area text-emerald-200 whitespace-pre overflow-x-auto">True
+True</pre>
+      </div>
+    </div>
+  </div>
+
+  <!-- Common mistakes -->
+  <h3 class="mt-10 text-xl font-extrabold">Common Mistakes (Beginner Warning)</h3>
+  <div class="mt-4 rounded-xl bg-red-500/10 ring-1 ring-red-400/20 p-5 text-slate-200/85">
+    <ul class="list-disc pl-6 space-y-2">
+      <li>Index 0 থেকে শুরু হয় — প্রথম item <span class="font-mono">list[0]</span></li>
+      <li>ভুল index দিলে <span class="font-mono">IndexError</span> হবে</li>
+      <li><span class="font-mono">remove()</span> value দিয়ে কাজ করে, <span class="font-mono">pop()</span> index দিয়ে</li>
+      <li><span class="font-mono">sort()</span> list-কে বদলে দেয় (in-place), নতুন list রিটার্ন করে না</li>
+    </ul>
+  </div>
+
+  <!-- Practice -->
+  <div class="mt-10 rounded-xl bg-white/5 ring-1 ring-white/10 p-5">
+    <div class="font-extrabold">অনুশীলন (Practice)</div>
+    <ol class="mt-3 list-decimal pl-6 text-slate-200/85 space-y-2">
+      <li>৫টা ফলের নাম দিয়ে একটা list বানাও।</li>
+      <li>প্রথম ও শেষ item প্রিন্ট করো (index 0 এবং -1)।</li>
+      <li>একটা item যোগ করো (<span class="font-mono">append</span>) এবং মাঝখানে আরেকটা যোগ করো (<span class="font-mono">insert</span>)।</li>
+      <li>একটা item মুছে ফেলো (<span class="font-mono">remove</span>) এবং একটা item <span class="font-mono">pop</span> করে বের করো।</li>
+      <li>একটা নাম list-এর ভিতরে আছে কিনা <span class="font-mono">in</span> দিয়ে চেক করো।</li>
+      <li>একটা সংখ্যার list নিয়ে sort করে দেখাও।</li>
+    </ol>
+  </div>
+</section>
+

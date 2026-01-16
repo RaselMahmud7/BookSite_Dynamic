@@ -1,0 +1,206 @@
+<section class="reveal rounded-2xl border border-white/10 bg-white/5 p-6 sm:p-8">
+  <h2 class="text-2xl sm:text-3xl font-extrabold">অধ্যায় ৭: ফাংশন (Functions) — একবার লিখে বারবার ব্যবহার</h2>
+
+  <p class="mt-4 text-slate-200/85">
+    ফাংশন হলো <span class="font-bold">একটা কাজের ছোট প্যাকেট</span> (reusable block)।
+    তুমি একবার ফাংশন লিখবে, তারপর দরকার হলে বারবার কল করবে।
+    এতে কোড হয় <span class="font-bold">ছোট</span>, <span class="font-bold">পরিষ্কার</span>,
+    এবং <span class="font-bold">maintain</span> করা অনেক সহজ।
+  </p>
+
+  <div class="mt-5 rounded-xl bg-blue-500/10 ring-1 ring-blue-400/20 p-4 text-slate-200/90">
+    <div class="font-extrabold text-blue-200">ফাংশন কেন দরকার?</div>
+    <ul class="mt-2 list-disc pl-6 space-y-1">
+      <li>একই কাজ বারবার না লিখে reuse করা</li>
+      <li>কোডকে ছোট ছোট অংশে ভাগ করে readable করা</li>
+      <li>ভুল হলে (bug) fix করা সহজ হয়</li>
+      <li>একটা কাজের জন্য একটা নাম (greet, add, login) রাখা যায়</li>
+    </ul>
+  </div>
+
+  <!-- function syntax -->
+  <h3 class="mt-10 text-xl font-extrabold">১) ফাংশন লেখার নিয়ম (Syntax)</h3>
+  <p class="mt-3 text-slate-200/85">
+    Python-এ ফাংশন লিখতে <span class="font-mono">def</span> ব্যবহার হয়।
+    তারপর ফাংশনের নাম, তারপর <span class="font-mono">()</span> এর ভিতরে parameter (যদি থাকে), তারপর <span class="font-mono">:</span>।
+    ফাংশনের ভিতরের কোড অবশ্যই <span class="font-bold">indent</span> করা লাগবে।
+  </p>
+
+  <div class="mt-4 rounded-xl bg-white/5 ring-1 ring-white/10 p-4 text-slate-200/85">
+    <div class="font-bold">মনে রাখো:</div>
+    <ul class="mt-2 list-disc pl-6 space-y-1">
+      <li><span class="font-mono">parameter</span> = ফাংশনের ভিতরে যে নামগুলো লিখো (placeholder)</li>
+      <li><span class="font-mono">argument</span> = ফাংশন কল করার সময় যে আসল মান পাঠাও</li>
+    </ul>
+  </div>
+
+  <!-- greet default parameter -->
+  <h3 class="mt-10 text-xl font-extrabold">২) Default parameter (না দিলে নিজে থেকে মান নেবে)</h3>
+  <p class="mt-3 text-slate-200/85">
+    কোনো parameter-এ default মান দিলে, কল করার সময় সেই argument না দিলেও ফাংশন কাজ করবে।
+    beginner দের জন্য এটা খুবই কাজে লাগে।
+  </p>
+
+  <div class="mt-4 editor">
+    <div class="editor-top px-4 py-3 flex items-center justify-between gap-3">
+      <div class="flex items-center gap-2">
+        <span class="dot" style="background:#ff5f57"></span>
+        <span class="dot" style="background:#febc2e"></span>
+        <span class="dot" style="background:#28c840"></span>
+        <span class="ml-2 text-xs text-slate-200/85">default_param.py</span>
+      </div>
+      <button class="rounded-lg bg-white/10 hover:bg-white/15 px-3 py-1.5 text-xs font-bold ring-1 ring-white/10 transition"
+        data-copy="ch7-code-1">Copy</button>
+    </div>
+
+    <div class="grid lg:grid-cols-2">
+      <div class="p-4">
+        <div class="text-xs font-bold text-slate-300/80 mb-2">Code</div>
+        <pre id="ch7-code-1" class="code-area text-slate-100 whitespace-pre overflow-x-auto"><code>def greet(name="Guest"):
+    print("Hello,", name)
+
+greet("Rahim")
+greet()</code></pre>
+      </div>
+      <div class="p-4 border-t lg:border-t-0 lg:border-l border-white/10 bg-white/5">
+        <div class="text-xs font-bold text-slate-300/80 mb-2">OUTPUT</div>
+        <pre class="out-area text-emerald-200 whitespace-pre overflow-x-auto">Hello, Rahim
+Hello, Guest</pre>
+      </div>
+    </div>
+  </div>
+
+  <!-- return -->
+  <h3 class="mt-10 text-xl font-extrabold">৩) return — ফলাফল ফেরত দেওয়া</h3>
+  <p class="mt-3 text-slate-200/85">
+    ফাংশন যদি শুধু print করে—তা শুধু দেখায়।
+    কিন্তু ফাংশন যদি <span class="font-mono">return</span> করে—তাহলে তুমি সেই ফলাফলকে অন্য কাজে ব্যবহার করতে পারবে।
+    <span class="font-mono">return</span> দেখলেই ফাংশন সঙ্গে সঙ্গে শেষ হয়ে যায়।
+  </p>
+
+  <div class="mt-4 editor">
+    <div class="editor-top px-4 py-3 flex items-center justify-between gap-3">
+      <div class="flex items-center gap-2">
+        <span class="dot" style="background:#ff5f57"></span>
+        <span class="dot" style="background:#febc2e"></span>
+        <span class="dot" style="background:#28c840"></span>
+        <span class="ml-2 text-xs text-slate-200/85">return_value.py</span>
+      </div>
+      <button class="rounded-lg bg-white/10 hover:bg-white/15 px-3 py-1.5 text-xs font-bold ring-1 ring-white/10 transition"
+        data-copy="ch7-code-2">Copy</button>
+    </div>
+
+    <div class="grid lg:grid-cols-2">
+      <div class="p-4">
+        <div class="text-xs font-bold text-slate-300/80 mb-2">Code</div>
+        <pre id="ch7-code-2" class="code-area text-slate-100 whitespace-pre overflow-x-auto"><code>def multiply(a, b):
+    return a * b
+
+result = multiply(4, 5)
+print(result)</code></pre>
+      </div>
+      <div class="p-4 border-t lg:border-t-0 lg:border-l border-white/10 bg-white/5">
+        <div class="text-xs font-bold text-slate-300/80 mb-2">OUTPUT</div>
+        <pre class="out-area text-emerald-200 whitespace-pre overflow-x-auto">20</pre>
+      </div>
+    </div>
+  </div>
+
+  <!-- multiple return -->
+  <h3 class="mt-10 text-xl font-extrabold">৪) একাধিক মান return করা (Multiple return)</h3>
+  <p class="mt-3 text-slate-200/85">
+    Python-এ ফাংশন একাধিক মানও return করতে পারে।
+    এটা আসলে tuple হিসেবে return হয়, কিন্তু beginner হিসেবে তুমি “একাধিক মান” হিসেবেই ধরতে পারো।
+  </p>
+
+  <div class="mt-4 editor">
+    <div class="editor-top px-4 py-3 flex items-center justify-between gap-3">
+      <div class="flex items-center gap-2">
+        <span class="dot" style="background:#ff5f57"></span>
+        <span class="dot" style="background:#febc2e"></span>
+        <span class="dot" style="background:#28c840"></span>
+        <span class="ml-2 text-xs text-slate-200/85">multiple_return.py</span>
+      </div>
+      <button class="rounded-lg bg-white/10 hover:bg-white/15 px-3 py-1.5 text-xs font-bold ring-1 ring-white/10 transition"
+        data-copy="ch7-code-3">Copy</button>
+    </div>
+
+    <div class="grid lg:grid-cols-2">
+      <div class="p-4">
+        <div class="text-xs font-bold text-slate-300/80 mb-2">Code</div>
+        <pre id="ch7-code-3" class="code-area text-slate-100 whitespace-pre overflow-x-auto"><code>def calc(a, b):
+    s = a + b
+    d = a - b
+    return s, d
+
+sum_val, diff_val = calc(10, 3)
+print("Sum:", sum_val)
+print("Diff:", diff_val)</code></pre>
+      </div>
+      <div class="p-4 border-t lg:border-t-0 lg:border-l border-white/10 bg-white/5">
+        <div class="text-xs font-bold text-slate-300/80 mb-2">OUTPUT</div>
+        <pre class="out-area text-emerald-200 whitespace-pre overflow-x-auto">Sum: 13
+Diff: 7</pre>
+      </div>
+    </div>
+  </div>
+
+  <!-- scope note (light) -->
+  <h3 class="mt-10 text-xl font-extrabold">৫) Scope (ভ্যারিয়েবল কোথায় কাজ করবে?)</h3>
+  <p class="mt-3 text-slate-200/85">
+    ফাংশনের ভিতরে তৈরি করা ভ্যারিয়েবলকে বলে <span class="font-bold">local</span> ভ্যারিয়েবল।
+    এটা ফাংশনের বাইরে সাধারণত পাওয়া যায় না।
+    (Scope এর বিস্তারিত তুমি আলাদা Chapter-এ দিবে, এখানে শুধু idea রাখলাম)
+  </p>
+
+  <div class="mt-4 editor">
+    <div class="editor-top px-4 py-3 flex items-center justify-between gap-3">
+      <div class="flex items-center gap-2">
+        <span class="dot" style="background:#ff5f57"></span>
+        <span class="dot" style="background:#febc2e"></span>
+        <span class="dot" style="background:#28c840"></span>
+        <span class="ml-2 text-xs text-slate-200/85">local_scope.py</span>
+      </div>
+      <button class="rounded-lg bg-white/10 hover:bg-white/15 px-3 py-1.5 text-xs font-bold ring-1 ring-white/10 transition"
+        data-copy="ch7-code-4">Copy</button>
+    </div>
+
+    <div class="grid lg:grid-cols-2">
+      <div class="p-4">
+        <div class="text-xs font-bold text-slate-300/80 mb-2">Code</div>
+        <pre id="ch7-code-4" class="code-area text-slate-100 whitespace-pre overflow-x-auto"><code>def demo():
+    x = 10  # local
+    print("Inside:", x)
+
+demo()</code></pre>
+      </div>
+      <div class="p-4 border-t lg:border-t-0 lg:border-l border-white/10 bg-white/5">
+        <div class="text-xs font-bold text-slate-300/80 mb-2">OUTPUT</div>
+        <pre class="out-area text-emerald-200 whitespace-pre overflow-x-auto">Inside: 10</pre>
+      </div>
+    </div>
+  </div>
+
+  <!-- Common mistakes -->
+  <h3 class="mt-10 text-xl font-extrabold">Common Mistakes (Beginner Warning)</h3>
+  <div class="mt-4 rounded-xl bg-red-500/10 ring-1 ring-red-400/20 p-5 text-slate-200/85">
+    <ul class="list-disc pl-6 space-y-2">
+      <li><span class="font-mono">def</span> লাইনের শেষে <span class="font-mono">:</span> দিতে ভুল করা</li>
+      <li>function body indent না করা</li>
+      <li><span class="font-mono">return</span> আর <span class="font-mono">print</span> এক জিনিস ভাবা (return = ফেরত, print = শুধু দেখায়)</li>
+      <li>parameter/argument গুলিয়ে ফেলা</li>
+    </ul>
+  </div>
+
+  <!-- Practice -->
+  <div class="mt-10 rounded-xl bg-white/5 ring-1 ring-white/10 p-5">
+    <div class="font-extrabold">অনুশীলন (Practice)</div>
+    <ol class="mt-3 list-decimal pl-6 text-slate-200/85 space-y-2">
+      <li><span class="font-bold">add(a, b)</span> নামে ফাংশন বানিয়ে যোগফল return করো।</li>
+      <li><span class="font-bold">is_even(n)</span> নামে ফাংশন বানিয়ে জোড় হলে True, না হলে False return করো।</li>
+      <li><span class="font-bold">full_name(first, last)</span> দিয়ে পূর্ণ নাম বানিয়ে return করো।</li>
+      <li>একটা default parameter দিয়ে greet ফাংশন বানাও।</li>
+      <li>একটা ফাংশন বানাও যা ২টা সংখ্যা নিয়ে (sum, diff) দুটোই return করবে।</li>
+    </ol>
+  </div>
+</section>

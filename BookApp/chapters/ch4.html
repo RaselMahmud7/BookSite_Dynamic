@@ -1,0 +1,311 @@
+<section class="reveal rounded-2xl border border-white/10 bg-white/5 p-6 sm:p-8">
+  <h2 class="text-2xl sm:text-3xl font-extrabold">অধ্যায় ৪: কন্ডিশনাল স্টেটমেন্ট (Conditionals: if / elif / else)</h2>
+
+  <p class="mt-4 text-slate-200/85">
+    কন্ডিশনাল স্টেটমেন্ট মানে—<span class="font-bold">যদি শর্ত সত্য হয়</span> তাহলে এক কাজ,
+    <span class="font-bold">না হলে</span> অন্য কাজ। এইভাবে প্রোগ্রাম “সিদ্ধান্ত” নিতে পারে।
+  </p>
+
+  <!-- Why conditionals -->
+  <div class="mt-5 rounded-xl bg-blue-500/10 ring-1 ring-blue-400/20 p-4 text-slate-200/90">
+    <div class="font-extrabold text-blue-200">কন্ডিশনাল কেন দরকার?</div>
+    <ul class="mt-2 list-disc pl-6 space-y-1">
+      <li>ইউজারের ইনপুট অনুযায়ী ভিন্ন আউটপুট দেখাতে</li>
+      <li>ভ্যালিডেশন করতে (ভুল ইনপুট ধরতে)</li>
+      <li>গ্রেডিং/ডিসকাউন্ট/যোগ্যতা চেক করতে</li>
+      <li>একাধিক সিদ্ধান্ত ধাপে ধাপে নিতে</li>
+    </ul>
+  </div>
+
+  <!-- Truthy/Falsy -->
+  <h3 class="mt-8 text-xl font-extrabold">Truthy / Falsy (খুব দরকারি)</h3>
+  <p class="mt-3 text-slate-200/85">
+    Python-এ সবকিছু True/False হিসেবে ব্যবহার করা যায়। যেমন:
+    <span class="font-mono">0</span>, <span class="font-mono">""</span>, <span class="font-mono">[]</span>, <span class="font-mono">None</span> → সাধারণত False ধরা হয়।
+    আর বাকিগুলো সাধারণত True।
+  </p>
+
+  <!-- if basic -->
+  <h3 class="mt-10 text-xl font-extrabold">১) if — শুধু শর্ত সত্য হলে চলবে</h3>
+  <p class="mt-3 text-slate-200/85">
+    <span class="font-mono">if</span> শর্ত True হলে তার ভিতরের কোড রান হবে। False হলে স্কিপ করবে।
+  </p>
+
+  <div class="mt-4 editor">
+    <div class="editor-top px-4 py-3 flex items-center justify-between gap-3">
+      <div class="flex items-center gap-2">
+        <span class="dot" style="background:#ff5f57"></span>
+        <span class="dot" style="background:#febc2e"></span>
+        <span class="dot" style="background:#28c840"></span>
+        <span class="ml-2 text-xs text-slate-200/85">if_basic.py</span>
+      </div>
+      <button class="rounded-lg bg-white/10 hover:bg-white/15 px-3 py-1.5 text-xs font-bold ring-1 ring-white/10 transition"
+        data-copy="ch4-code-0">Copy</button>
+    </div>
+
+    <div class="grid lg:grid-cols-2">
+      <div class="p-4">
+        <div class="text-xs font-bold text-slate-300/80 mb-2">Code</div>
+        <pre id="ch4-code-0" class="code-area text-slate-100 whitespace-pre overflow-x-auto"><code>age = 20
+
+if age >= 18:
+    print("You are an adult")</code></pre>
+      </div>
+      <div class="p-4 border-t lg:border-t-0 lg:border-l border-white/10 bg-white/5">
+        <div class="text-xs font-bold text-slate-300/80 mb-2">OUTPUT</div>
+        <pre class="out-area text-emerald-200 whitespace-pre overflow-x-auto">You are an adult</pre>
+      </div>
+    </div>
+  </div>
+
+  <!-- if else -->
+  <h3 class="mt-10 text-xl font-extrabold">২) if / else — সত্য হলে এক কাজ, না হলে অন্য কাজ</h3>
+  <p class="mt-3 text-slate-200/85">
+    শর্ত True হলে <span class="font-mono">if</span> ব্লক, আর False হলে <span class="font-mono">else</span> ব্লক চলবে।
+  </p>
+
+  <div class="mt-4 editor">
+    <div class="editor-top px-4 py-3 flex items-center justify-between gap-3">
+      <div class="flex items-center gap-2">
+        <span class="dot" style="background:#ff5f57"></span>
+        <span class="dot" style="background:#febc2e"></span>
+        <span class="dot" style="background:#28c840"></span>
+        <span class="ml-2 text-xs text-slate-200/85">if_else.py</span>
+      </div>
+      <button class="rounded-lg bg-white/10 hover:bg-white/15 px-3 py-1.5 text-xs font-bold ring-1 ring-white/10 transition"
+        data-copy="ch4-code-0b">Copy</button>
+    </div>
+
+    <div class="grid lg:grid-cols-2">
+      <div class="p-4">
+        <div class="text-xs font-bold text-slate-300/80 mb-2">Code</div>
+        <pre id="ch4-code-0b" class="code-area text-slate-100 whitespace-pre overflow-x-auto"><code>temperature = 28
+
+if temperature > 25:
+    print("It's hot today")
+else:
+    print("Weather is nice")</code></pre>
+      </div>
+      <div class="p-4 border-t lg:border-t-0 lg:border-l border-white/10 bg-white/5">
+        <div class="text-xs font-bold text-slate-300/80 mb-2">OUTPUT</div>
+        <pre class="out-area text-emerald-200 whitespace-pre overflow-x-auto">It's hot today</pre>
+      </div>
+    </div>
+  </div>
+
+  <!-- if elif else -->
+  <h3 class="mt-10 text-xl font-extrabold">৩) if / elif / else — একাধিক শর্ত</h3>
+  <p class="mt-3 text-slate-200/85">
+    যখন অনেকগুলো শর্ত পরীক্ষা করতে হয়, তখন <span class="font-mono">elif</span> ব্যবহার হয়।
+    Python উপর থেকে নিচে শর্ত চেক করে—যেই শর্তটা আগে True হবে, সেটাই রান হবে।
+  </p>
+
+  <div class="mt-6 editor">
+    <div class="editor-top px-4 py-3 flex items-center justify-between gap-3">
+      <div class="flex items-center gap-2">
+        <span class="dot" style="background:#ff5f57"></span>
+        <span class="dot" style="background:#febc2e"></span>
+        <span class="dot" style="background:#28c840"></span>
+        <span class="ml-2 text-xs text-slate-200/85">conditionals.py</span>
+      </div>
+      <button class="rounded-lg bg-white/10 hover:bg-white/15 px-3 py-1.5 text-xs font-bold ring-1 ring-white/10 transition"
+        data-copy="ch4-code-1">Copy</button>
+    </div>
+
+    <div class="grid lg:grid-cols-2">
+      <div class="p-4">
+        <div class="text-xs font-bold text-slate-300/80 mb-2">Code</div>
+        <pre id="ch4-code-1" class="code-area text-slate-100 whitespace-pre overflow-x-auto"><code>score = 85
+
+if score >= 90:
+    grade = "A"
+elif score >= 80:
+    grade = "B"
+elif score >= 70:
+    grade = "C"
+else:
+    grade = "F"
+
+print("Grade:", grade)</code></pre>
+      </div>
+
+      <div class="p-4 border-t lg:border-t-0 lg:border-l border-white/10 bg-white/5">
+        <div class="text-xs font-bold text-slate-300/80 mb-2">OUTPUT</div>
+        <pre class="out-area text-emerald-200 whitespace-pre overflow-x-auto">Grade: B</pre>
+      </div>
+    </div>
+  </div>
+
+  <!-- Common patterns -->
+  <h3 class="mt-10 text-xl font-extrabold">কিছু Common Pattern (খুব কাজে লাগে)</h3>
+
+  <div class="mt-4 grid gap-4 lg:grid-cols-2">
+    <div class="rounded-xl bg-white/5 ring-1 ring-white/10 p-5">
+      <div class="font-extrabold">✅ Range Check (একটা রেঞ্জের ভিতরে কিনা)</div>
+      <p class="mt-2 text-slate-200/85">
+        যেমন 18 থেকে 30 এর ভিতরে কিনা:
+        <span class="font-mono">18 <= age <= 30</span>
+      </p>
+      <div class="mt-3 editor">
+        <div class="editor-top px-4 py-3 flex items-center justify-between gap-3">
+          <div class="flex items-center gap-2">
+            <span class="dot" style="background:#ff5f57"></span>
+            <span class="dot" style="background:#febc2e"></span>
+            <span class="dot" style="background:#28c840"></span>
+            <span class="ml-2 text-xs text-slate-200/85">range_check.py</span>
+          </div>
+          <button class="rounded-lg bg-white/10 hover:bg-white/15 px-3 py-1.5 text-xs font-bold ring-1 ring-white/10 transition"
+            data-copy="ch4-code-2">Copy</button>
+        </div>
+        <div class="grid lg:grid-cols-2">
+          <div class="p-4">
+            <div class="text-xs font-bold text-slate-300/80 mb-2">Code</div>
+            <pre id="ch4-code-2" class="code-area text-slate-100 whitespace-pre overflow-x-auto"><code>age = 22
+
+if 18 <= age <= 30:
+    print("Young adult range")
+else:
+    print("Outside range")</code></pre>
+          </div>
+          <div class="p-4 border-t lg:border-t-0 lg:border-l border-white/10 bg-white/5">
+            <div class="text-xs font-bold text-slate-300/80 mb-2">OUTPUT</div>
+            <pre class="out-area text-emerald-200 whitespace-pre overflow-x-auto">Young adult range</pre>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="rounded-xl bg-white/5 ring-1 ring-white/10 p-5">
+      <div class="font-extrabold">✅ Validation (ইনপুট ঠিক আছে কিনা)</div>
+      <p class="mt-2 text-slate-200/85">
+        বয়স negative হলে invalid ধরতে পারো।
+      </p>
+      <div class="mt-3 editor">
+        <div class="editor-top px-4 py-3 flex items-center justify-between gap-3">
+          <div class="flex items-center gap-2">
+            <span class="dot" style="background:#ff5f57"></span>
+            <span class="dot" style="background:#febc2e"></span>
+            <span class="dot" style="background:#28c840"></span>
+            <span class="ml-2 text-xs text-slate-200/85">validation.py</span>
+          </div>
+          <button class="rounded-lg bg-white/10 hover:bg-white/15 px-3 py-1.5 text-xs font-bold ring-1 ring-white/10 transition"
+            data-copy="ch4-code-3">Copy</button>
+        </div>
+        <div class="grid lg:grid-cols-2">
+          <div class="p-4">
+            <div class="text-xs font-bold text-slate-300/80 mb-2">Code</div>
+            <pre id="ch4-code-3" class="code-area text-slate-100 whitespace-pre overflow-x-auto"><code>age = -2
+
+if age < 0:
+    print("Invalid age")
+else:
+    print("Valid age")</code></pre>
+          </div>
+          <div class="p-4 border-t lg:border-t-0 lg:border-l border-white/10 bg-white/5">
+            <div class="text-xs font-bold text-slate-300/80 mb-2">OUTPUT</div>
+            <pre class="out-area text-emerald-200 whitespace-pre overflow-x-auto">Invalid age</pre>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Nested if -->
+  <h3 class="mt-10 text-xl font-extrabold">Nested if (একটার ভিতরে আরেকটা if)</h3>
+  <p class="mt-3 text-slate-200/85">
+    যখন একটা শর্ত সত্য হলে আরও একটা শর্ত চেক করতে হয়, তখন nested if কাজে লাগে।
+    তবে বেশি nested করলে কোড জটিল হয়ে যায়, তাই সম্ভব হলে <span class="font-mono">and / or</span> দিয়ে শর্ত combine করো।
+  </p>
+
+  <div class="mt-4 editor">
+    <div class="editor-top px-4 py-3 flex items-center justify-between gap-3">
+      <div class="flex items-center gap-2">
+        <span class="dot" style="background:#ff5f57"></span>
+        <span class="dot" style="background:#febc2e"></span>
+        <span class="dot" style="background:#28c840"></span>
+        <span class="ml-2 text-xs text-slate-200/85">nested_if.py</span>
+      </div>
+      <button class="rounded-lg bg-white/10 hover:bg-white/15 px-3 py-1.5 text-xs font-bold ring-1 ring-white/10 transition"
+        data-copy="ch4-code-4">Copy</button>
+    </div>
+
+    <div class="grid lg:grid-cols-2">
+      <div class="p-4">
+        <div class="text-xs font-bold text-slate-300/80 mb-2">Code</div>
+        <pre id="ch4-code-4" class="code-area text-slate-100 whitespace-pre overflow-x-auto"><code>age = 22
+has_license = True
+
+if age >= 18:
+    print("Adult")
+    if has_license:
+        print("Can drive")
+    else:
+        print("No license")
+else:
+    print("Not adult")</code></pre>
+      </div>
+
+      <div class="p-4 border-t lg:border-t-0 lg:border-l border-white/10 bg-white/5">
+        <div class="text-xs font-bold text-slate-300/80 mb-2">OUTPUT</div>
+        <pre class="out-area text-emerald-200 whitespace-pre overflow-x-auto">Adult
+Can drive</pre>
+      </div>
+    </div>
+  </div>
+
+  <!-- Ternary -->
+  <h3 class="mt-10 text-xl font-extrabold">Bonus: One-line if (Ternary)</h3>
+  <p class="mt-3 text-slate-200/85">
+    ছোট decision হলে এক লাইনে লেখা যায়। এটা optional, কিন্তু শিখলে কোড compact হয়।
+  </p>
+
+  <div class="mt-4 editor">
+    <div class="editor-top px-4 py-3 flex items-center justify-between gap-3">
+      <div class="flex items-center gap-2">
+        <span class="dot" style="background:#ff5f57"></span>
+        <span class="dot" style="background:#febc2e"></span>
+        <span class="dot" style="background:#28c840"></span>
+        <span class="ml-2 text-xs text-slate-200/85">ternary.py</span>
+      </div>
+      <button class="rounded-lg bg-white/10 hover:bg-white/15 px-3 py-1.5 text-xs font-bold ring-1 ring-white/10 transition"
+        data-copy="ch4-code-5">Copy</button>
+    </div>
+
+    <div class="grid lg:grid-cols-2">
+      <div class="p-4">
+        <div class="text-xs font-bold text-slate-300/80 mb-2">Code</div>
+        <pre id="ch4-code-5" class="code-area text-slate-100 whitespace-pre overflow-x-auto"><code>age = 16
+status = "Adult" if age >= 18 else "Minor"
+print(status)</code></pre>
+      </div>
+      <div class="p-4 border-t lg:border-t-0 lg:border-l border-white/10 bg-white/5">
+        <div class="text-xs font-bold text-slate-300/80 mb-2">OUTPUT</div>
+        <pre class="out-area text-emerald-200 whitespace-pre overflow-x-auto">Minor</pre>
+      </div>
+    </div>
+  </div>
+
+  <!-- Common mistakes -->
+  <h3 class="mt-10 text-xl font-extrabold">Common Mistakes (Beginner Warning)</h3>
+  <div class="mt-4 rounded-xl bg-red-500/10 ring-1 ring-red-400/20 p-5 text-slate-200/85">
+    <ul class="list-disc pl-6 space-y-2">
+      <li><span class="font-mono">=</span> (assign) আর <span class="font-mono">==</span> (compare) গুলিয়ে ফেলো না</li>
+      <li><span class="font-bold">Indentation</span> ভুল হলে error আসবে (Python-এ indentation খুব গুরুত্বপূর্ণ)</li>
+      <li>একাধিক শর্তের order ভুল হলে ভুল ফল আসতে পারে (if/elif উপর থেকে নিচে)</li>
+      <li>None চেক করতে <span class="font-mono">x is None</span> ব্যবহার করো</li>
+    </ul>
+  </div>
+
+  <!-- Practice -->
+  <div class="mt-10 rounded-xl bg-white/5 ring-1 ring-white/10 p-5">
+    <div class="font-extrabold">অনুশীলন (Practice)</div>
+    <ol class="mt-3 list-decimal pl-6 text-slate-200/85 space-y-2">
+      <li><span class="font-bold">age</span> ভ্যারিয়েবল দিয়ে 18 এর বেশি/কম হলে আলাদা মেসেজ দেখাও।</li>
+      <li>একটা <span class="font-bold">score</span> নিয়ে A/B/C/F গ্রেড বের করো (if/elif/else)।</li>
+      <li>ইউজার থেকে একটা সংখ্যা নিয়ে জোড়/বিজোড় প্রিন্ট করো (if + modulus)।</li>
+      <li>একটা <span class="font-bold">price</span> যদি 100 এর বেশি হয় 10% discount, না হলে 0% discount দেখাও।</li>
+      <li>Nested if দিয়ে চেক করো: বয়স >= 18 হলে “Adult”, তারপর লাইসেন্স থাকলে “Can drive”।</li>
+      <li>Ternary ব্যবহার করে “Pass/Fail” বের করো: score >= 50 হলে Pass।</li>
+    </ol>
+  </div>
+</section>

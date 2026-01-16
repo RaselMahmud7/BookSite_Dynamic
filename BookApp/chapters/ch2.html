@@ -1,0 +1,437 @@
+<section class="reveal rounded-2xl border border-white/10 bg-white/5 p-6 sm:p-8">
+  <h2 class="text-2xl sm:text-3xl font-extrabold">অধ্যায় ২: ডেটা টাইপ (Data Types)</h2>
+
+  <p class="mt-4 text-slate-200/85">
+    কম্পিউটারে আমরা যা কিছু নিয়ে কাজ করি—সংখ্যা, লেখা, সত্য/মিথ্যা—সবই ডেটা। কিন্তু সব ডেটা এক রকম নয়।
+    <span class="font-bold">ডেটা টাইপ</span> কম্পিউটারকে বলে দেয়: “এই মানটা কী ধরনের?” এবং “এটার সাথে কী কাজ করা যাবে?”
+  </p>
+
+  <!-- Key idea -->
+  <div class="mt-5 rounded-xl bg-blue-500/10 ring-1 ring-blue-400/20 p-4 text-slate-200/90">
+    <div class="font-extrabold text-blue-200">ডেটা টাইপ কেন গুরুত্বপূর্ণ?</div>
+    <ul class="mt-2 list-disc pl-6 space-y-1">
+      <li>একই অপারেটর (<span class="font-mono">+</span>) ভিন্ন টাইপে ভিন্ন কাজ করতে পারে</li>
+      <li>ভুল টাইপ হলে error আসে (যেমন: string আর int যোগ করা)</li>
+      <li>ডেটা ঠিকমতো কনভার্ট/ফরম্যাট করতে পারলে কোড পরিষ্কার থাকে</li>
+    </ul>
+  </div>
+
+  <!-- + behavior -->
+  <h3 class="mt-8 text-xl font-extrabold">একই <span class="font-mono">+</span> কিন্তু ফল আলাদা কেন?</h3>
+  <p class="mt-3 text-slate-200/85">
+    <span class="font-bold">সংখ্যা (int/float)</span> হলে <span class="font-mono">+</span> মানে যোগ।
+    <span class="font-bold">স্ট্রিং (str)</span> হলে <span class="font-mono">+</span> মানে জোড়া লাগানো (concatenate)।
+  </p>
+
+  <div class="mt-4 editor">
+    <div class="editor-top px-4 py-3 flex items-center justify-between gap-3">
+      <div class="flex items-center gap-2">
+        <span class="dot" style="background:#ff5f57"></span>
+        <span class="dot" style="background:#febc2e"></span>
+        <span class="dot" style="background:#28c840"></span>
+        <span class="ml-2 text-xs text-slate-200/85">plus_behavior.py</span>
+      </div>
+      <button class="rounded-lg bg-white/10 hover:bg-white/15 px-3 py-1.5 text-xs font-bold ring-1 ring-white/10 transition"
+        data-copy="ch2-code-1">Copy</button>
+    </div>
+
+    <div class="grid lg:grid-cols-2">
+      <div class="p-4">
+        <div class="text-xs font-bold text-slate-300/80 mb-2">Code</div>
+        <pre id="ch2-code-1" class="code-area text-slate-100 whitespace-pre overflow-x-auto"><code>a = 3
+b = 4
+print("Number add:", a + b)
+
+x = "3"
+y = "4"
+print("String join:", x + y)</code></pre>
+      </div>
+
+      <div class="p-4 border-t lg:border-t-0 lg:border-l border-white/10 bg-white/5">
+        <div class="text-xs font-bold text-slate-300/80 mb-2">OUTPUT</div>
+        <pre class="out-area text-emerald-200 whitespace-pre overflow-x-auto">Number add: 7
+String join: 34</pre>
+      </div>
+    </div>
+  </div>
+
+  <!-- type() -->
+  <h3 class="mt-8 text-xl font-extrabold">টাইপ কীভাবে দেখবো? (<span class="font-mono">type()</span>)</h3>
+  <p class="mt-3 text-slate-200/85">
+    Python-এ <span class="font-mono">type()</span> ফাংশন দিয়ে কোনো ভ্যারিয়েবলের ডেটা টাইপ জানা যায়।
+  </p>
+
+  <div class="mt-4 editor">
+    <div class="editor-top px-4 py-3 flex items-center justify-between gap-3">
+      <div class="flex items-center gap-2">
+        <span class="dot" style="background:#ff5f57"></span>
+        <span class="dot" style="background:#febc2e"></span>
+        <span class="dot" style="background:#28c840"></span>
+        <span class="ml-2 text-xs text-slate-200/85">type_check.py</span>
+      </div>
+      <button class="rounded-lg bg-white/10 hover:bg-white/15 px-3 py-1.5 text-xs font-bold ring-1 ring-white/10 transition"
+        data-copy="ch2-code-2">Copy</button>
+    </div>
+
+    <div class="grid lg:grid-cols-2">
+      <div class="p-4">
+        <div class="text-xs font-bold text-slate-300/80 mb-2">Code</div>
+        <pre id="ch2-code-2" class="code-area text-slate-100 whitespace-pre overflow-x-auto"><code>name = "Rahim"
+age = 30
+price = 12.75
+is_active = True
+nothing = None
+
+print(type(name))
+print(type(age))
+print(type(price))
+print(type(is_active))
+print(type(nothing))</code></pre>
+      </div>
+
+      <div class="p-4 border-t lg:border-t-0 lg:border-l border-white/10 bg-white/5">
+        <div class="text-xs font-bold text-slate-300/80 mb-2">OUTPUT</div>
+        <pre class="out-area text-emerald-200 whitespace-pre overflow-x-auto">&lt;class 'str'&gt;
+&lt;class 'int'&gt;
+&lt;class 'float'&gt;
+&lt;class 'bool'&gt;
+&lt;class 'NoneType'&gt;</pre>
+      </div>
+    </div>
+  </div>
+
+  <!-- Common data types -->
+  <h3 class="mt-10 text-xl font-extrabold">Python-এর সাধারণ ডেটা টাইপ (Must Know)</h3>
+
+  <!-- STR -->
+  <div class="mt-5 rounded-xl bg-white/5 ring-1 ring-white/10 p-5">
+    <div class="flex items-center justify-between gap-3">
+      <div class="font-extrabold text-slate-100">1) String (str) — লেখা/টেক্সট</div>
+      <span class="text-xs text-slate-200/70">"Hello", 'Bangla', "123"</span>
+    </div>
+    <p class="mt-3 text-slate-200/85">
+      স্ট্রিং হলো লেখার ডেটা। কোটেশনের ভিতরে লিখতে হয়। স্ট্রিং-এর সাথে সংখ্যা সরাসরি যোগ/বিয়োগ করা যায় না।
+    </p>
+
+    <div class="mt-4 editor">
+      <div class="editor-top px-4 py-3 flex items-center justify-between gap-3">
+        <div class="flex items-center gap-2">
+          <span class="dot" style="background:#ff5f57"></span>
+          <span class="dot" style="background:#febc2e"></span>
+          <span class="dot" style="background:#28c840"></span>
+          <span class="ml-2 text-xs text-slate-200/85">string_example.py</span>
+        </div>
+        <button class="rounded-lg bg-white/10 hover:bg-white/15 px-3 py-1.5 text-xs font-bold ring-1 ring-white/10 transition"
+          data-copy="ch2-code-3">Copy</button>
+      </div>
+
+      <div class="grid lg:grid-cols-2">
+        <div class="p-4">
+          <div class="text-xs font-bold text-slate-300/80 mb-2">Code</div>
+          <pre id="ch2-code-3" class="code-area text-slate-100 whitespace-pre overflow-x-auto"><code>first = "Hello"
+second = "World"
+print(first + " " + second)
+
+# f-string (nice formatting)
+name = "Rahim"
+print(f"Welcome, {name}!")</code></pre>
+        </div>
+
+        <div class="p-4 border-t lg:border-t-0 lg:border-l border-white/10 bg-white/5">
+          <div class="text-xs font-bold text-slate-300/80 mb-2">OUTPUT</div>
+          <pre class="out-area text-emerald-200 whitespace-pre overflow-x-auto">Hello World
+Welcome, Rahim!</pre>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- INT -->
+  <div class="mt-5 rounded-xl bg-white/5 ring-1 ring-white/10 p-5">
+    <div class="flex items-center justify-between gap-3">
+      <div class="font-extrabold text-slate-100">2) Integer (int) — পূর্ণ সংখ্যা</div>
+      <span class="text-xs text-slate-200/70">10, 0, -5</span>
+    </div>
+    <p class="mt-3 text-slate-200/85">
+      দশমিক ছাড়া সংখ্যা হলো int। Python-এ int সাধারণভাবে বড় হতে পারে (মেমোরি পর্যন্ত)।
+    </p>
+
+    <div class="mt-4 editor">
+      <div class="editor-top px-4 py-3 flex items-center justify-between gap-3">
+        <div class="flex items-center gap-2">
+          <span class="dot" style="background:#ff5f57"></span>
+          <span class="dot" style="background:#febc2e"></span>
+          <span class="dot" style="background:#28c840"></span>
+          <span class="ml-2 text-xs text-slate-200/85">int_example.py</span>
+        </div>
+        <button class="rounded-lg bg-white/10 hover:bg-white/15 px-3 py-1.5 text-xs font-bold ring-1 ring-white/10 transition"
+          data-copy="ch2-code-4">Copy</button>
+      </div>
+
+      <div class="grid lg:grid-cols-2">
+        <div class="p-4">
+          <div class="text-xs font-bold text-slate-300/80 mb-2">Code</div>
+          <pre id="ch2-code-4" class="code-area text-slate-100 whitespace-pre overflow-x-auto"><code>age = 30
+years = 5
+print("After 5 years:", age + years)
+
+# integer division vs normal division
+print("7 / 3 =", 7 / 3)
+print("7 // 3 =", 7 // 3)</code></pre>
+        </div>
+
+        <div class="p-4 border-t lg:border-t-0 lg:border-l border-white/10 bg-white/5">
+          <div class="text-xs font-bold text-slate-300/80 mb-2">OUTPUT</div>
+          <pre class="out-area text-emerald-200 whitespace-pre overflow-x-auto">After 5 years: 35
+7 / 3 = 2.3333333333333335
+7 // 3 = 2</pre>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- FLOAT -->
+  <div class="mt-5 rounded-xl bg-white/5 ring-1 ring-white/10 p-5">
+    <div class="flex items-center justify-between gap-3">
+      <div class="font-extrabold text-slate-100">3) Float (float) — দশমিক সংখ্যা</div>
+      <span class="text-xs text-slate-200/70">3.14, 12.75, -0.5</span>
+    </div>
+    <p class="mt-3 text-slate-200/85">
+      দশমিকসহ সংখ্যা হলো float। float দিয়ে গণনা করলে কখনো কখনো ছোট precision issue দেখা দিতে পারে।
+      এটা normal (floating-point behavior)।
+    </p>
+
+    <div class="mt-4 editor">
+      <div class="editor-top px-4 py-3 flex items-center justify-between gap-3">
+        <div class="flex items-center gap-2">
+          <span class="dot" style="background:#ff5f57"></span>
+          <span class="dot" style="background:#febc2e"></span>
+          <span class="dot" style="background:#28c840"></span>
+          <span class="ml-2 text-xs text-slate-200/85">float_example.py</span>
+        </div>
+        <button class="rounded-lg bg-white/10 hover:bg-white/15 px-3 py-1.5 text-xs font-bold ring-1 ring-white/10 transition"
+          data-copy="ch2-code-5">Copy</button>
+      </div>
+
+      <div class="grid lg:grid-cols-2">
+        <div class="p-4">
+          <div class="text-xs font-bold text-slate-300/80 mb-2">Code</div>
+          <pre id="ch2-code-5" class="code-area text-slate-100 whitespace-pre overflow-x-auto"><code>pi = 3.14159
+r = 2.5
+area = pi * r * r
+print("Area:", area)
+
+# rounding
+print("Rounded:", round(area, 2))</code></pre>
+        </div>
+
+        <div class="p-4 border-t lg:border-t-0 lg:border-l border-white/10 bg-white/5">
+          <div class="text-xs font-bold text-slate-300/80 mb-2">OUTPUT</div>
+          <pre class="out-area text-emerald-200 whitespace-pre overflow-x-auto">Area: 19.6349375
+Rounded: 19.63</pre>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- BOOL -->
+  <div class="mt-5 rounded-xl bg-white/5 ring-1 ring-white/10 p-5">
+    <div class="flex items-center justify-between gap-3">
+      <div class="font-extrabold text-slate-100">4) Boolean (bool) — True / False</div>
+      <span class="text-xs text-slate-200/70">True, False</span>
+    </div>
+    <p class="mt-3 text-slate-200/85">
+      বুলিয়ান মানে সত্য বা মিথ্যা। Condition (if/else) এ খুব বেশি ব্যবহার হয়।
+      <span class="font-bold">True/False</span> লিখতে হবে (T/F বড় হাতের)।
+    </p>
+
+    <div class="mt-4 editor">
+      <div class="editor-top px-4 py-3 flex items-center justify-between gap-3">
+        <div class="flex items-center gap-2">
+          <span class="dot" style="background:#ff5f57"></span>
+          <span class="dot" style="background:#febc2e"></span>
+          <span class="dot" style="background:#28c840"></span>
+          <span class="ml-2 text-xs text-slate-200/85">bool_example.py</span>
+        </div>
+        <button class="rounded-lg bg-white/10 hover:bg-white/15 px-3 py-1.5 text-xs font-bold ring-1 ring-white/10 transition"
+          data-copy="ch2-code-6">Copy</button>
+      </div>
+
+      <div class="grid lg:grid-cols-2">
+        <div class="p-4">
+          <div class="text-xs font-bold text-slate-300/80 mb-2">Code</div>
+          <pre id="ch2-code-6" class="code-area text-slate-100 whitespace-pre overflow-x-auto"><code>is_raining = True
+school_closed = False
+
+if is_raining and not school_closed:
+    print("Take an umbrella!")</code></pre>
+        </div>
+
+        <div class="p-4 border-t lg:border-t-0 lg:border-l border-white/10 bg-white/5">
+          <div class="text-xs font-bold text-slate-300/80 mb-2">OUTPUT</div>
+          <pre class="out-area text-emerald-200 whitespace-pre overflow-x-auto">Take an umbrella!</pre>
+        </div>
+      </div>
+    </div>
+
+    <div class="mt-4 rounded-lg bg-white/5 ring-1 ring-white/10 p-4 text-slate-200/85">
+      <div class="font-bold">Truthy / Falsy (খুব দরকারি)</div>
+      <p class="mt-2">
+        Python-এ কিছু মানকে “False” হিসেবে ধরা হয়—যেমন <span class="font-mono">0</span>, <span class="font-mono">""</span>,
+        <span class="font-mono">[]</span>, <span class="font-mono">None</span>।
+        বাকিগুলো সাধারণত True।
+      </p>
+      <div class="mt-3 editor">
+        <div class="editor-top px-4 py-3 flex items-center justify-between gap-3">
+          <div class="flex items-center gap-2">
+            <span class="dot" style="background:#ff5f57"></span>
+            <span class="dot" style="background:#febc2e"></span>
+            <span class="dot" style="background:#28c840"></span>
+            <span class="ml-2 text-xs text-slate-200/85">truthy_falsy.py</span>
+          </div>
+          <button class="rounded-lg bg-white/10 hover:bg-white/15 px-3 py-1.5 text-xs font-bold ring-1 ring-white/10 transition"
+            data-copy="ch2-code-7">Copy</button>
+        </div>
+        <div class="grid lg:grid-cols-2">
+          <div class="p-4">
+            <div class="text-xs font-bold text-slate-300/80 mb-2">Code</div>
+            <pre id="ch2-code-7" class="code-area text-slate-100 whitespace-pre overflow-x-auto"><code>items = []
+if items:
+    print("Has items")
+else:
+    print("Empty list is falsy")
+
+text = ""
+if text:
+    print("Has text")
+else:
+    print("Empty string is falsy")</code></pre>
+          </div>
+          <div class="p-4 border-t lg:border-t-0 lg:border-l border-white/10 bg-white/5">
+            <div class="text-xs font-bold text-slate-300/80 mb-2">OUTPUT</div>
+            <pre class="out-area text-emerald-200 whitespace-pre overflow-x-auto">Empty list is falsy
+Empty string is falsy</pre>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- NONE -->
+  <div class="mt-5 rounded-xl bg-white/5 ring-1 ring-white/10 p-5">
+    <div class="flex items-center justify-between gap-3">
+      <div class="font-extrabold text-slate-100">5) None (NoneType) — “কোনো মান নেই”</div>
+      <span class="text-xs text-slate-200/70">None</span>
+    </div>
+    <p class="mt-3 text-slate-200/85">
+      None মানে “no value / unknown”। None চেক করার সেরা উপায়:
+      <span class="font-mono">is None</span> এবং <span class="font-mono">is not None</span>।
+    </p>
+  </div>
+
+  <!-- Casting -->
+  <h3 class="mt-10 text-xl font-extrabold">ডেটা টাইপ কাস্টিং (Type Casting)</h3>
+  <p class="mt-3 text-slate-200/85">
+    কাস্টিং মানে এক ধরনের ডেটাকে আরেক ধরনের ডেটায় বদলানো। সাধারণ কাস্টিং:
+    <span class="font-mono">int()</span>, <span class="font-mono">float()</span>, <span class="font-mono">str()</span>, <span class="font-mono">bool()</span>।
+  </p>
+
+  <div class="mt-4 editor">
+    <div class="editor-top px-4 py-3 flex items-center justify-between gap-3">
+      <div class="flex items-center gap-2">
+        <span class="dot" style="background:#ff5f57"></span>
+        <span class="dot" style="background:#febc2e"></span>
+        <span class="dot" style="background:#28c840"></span>
+        <span class="ml-2 text-xs text-slate-200/85">casting_basics.py</span>
+      </div>
+      <button class="rounded-lg bg-white/10 hover:bg-white/15 px-3 py-1.5 text-xs font-bold ring-1 ring-white/10 transition"
+        data-copy="ch2-code-8">Copy</button>
+    </div>
+
+    <div class="grid lg:grid-cols-2">
+      <div class="p-4">
+        <div class="text-xs font-bold text-slate-300/80 mb-2">Code</div>
+        <pre id="ch2-code-8" class="code-area text-slate-100 whitespace-pre overflow-x-auto"><code>age_str = "25"
+age_int = int(age_str)
+print("Age + 5 =", age_int + 5)
+
+price_str = "12.75"
+price_float = float(price_str)
+print("Price x 2 =", price_float * 2)
+
+num = 99
+num_text = str(num)
+print("Number as text:", num_text)
+
+print("bool(0) =", bool(0))
+print("bool(1) =", bool(1))
+print('bool("") =', bool(""))</code></pre>
+      </div>
+
+      <div class="p-4 border-t lg:border-t-0 lg:border-l border-white/10 bg-white/5">
+        <div class="text-xs font-bold text-slate-300/80 mb-2">OUTPUT</div>
+        <pre class="out-area text-emerald-200 whitespace-pre overflow-x-auto">Age + 5 = 30
+Price x 2 = 25.5
+Number as text: 99
+bool(0) = False
+bool(1) = True
+bool("") = False</pre>
+      </div>
+    </div>
+  </div>
+
+  <!-- Input note -->
+  <h3 class="mt-10 text-xl font-extrabold">মনে রাখো: <span class="font-mono">input()</span> সবসময় String দেয়</h3>
+  <p class="mt-3 text-slate-200/85">
+    ইউজার থেকে ইনপুট নিলে সেটা সবসময় <span class="font-mono">str</span> হয়। সংখ্যা হিসেবে ব্যবহার করতে হলে কাস্ট করতে হবে।
+  </p>
+
+  <div class="mt-4 editor">
+    <div class="editor-top px-4 py-3 flex items-center justify-between gap-3">
+      <div class="flex items-center gap-2">
+        <span class="dot" style="background:#ff5f57"></span>
+        <span class="dot" style="background:#febc2e"></span>
+        <span class="dot" style="background:#28c840"></span>
+        <span class="ml-2 text-xs text-slate-200/85">input_casting.py</span>
+      </div>
+      <button class="rounded-lg bg-white/10 hover:bg-white/15 px-3 py-1.5 text-xs font-bold ring-1 ring-white/10 transition"
+        data-copy="ch2-code-9">Copy</button>
+    </div>
+
+    <div class="grid lg:grid-cols-2">
+      <div class="p-4">
+        <div class="text-xs font-bold text-slate-300/80 mb-2">Code</div>
+        <pre id="ch2-code-9" class="code-area text-slate-100 whitespace-pre overflow-x-auto"><code>age = int(input("Enter your age: "))
+print("After 1 year:", age + 1)</code></pre>
+      </div>
+
+      <div class="p-4 border-t lg:border-t-0 lg:border-l border-white/10 bg-white/5">
+        <div class="text-xs font-bold text-slate-300/80 mb-2">OUTPUT (Example)</div>
+        <pre class="out-area text-emerald-200 whitespace-pre overflow-x-auto">Enter your age: 30
+After 1 year: 31</pre>
+      </div>
+    </div>
+  </div>
+
+  <!-- Common errors -->
+  <h3 class="mt-10 text-xl font-extrabold">Common Mistakes (Beginner Warning)</h3>
+  <div class="mt-4 rounded-xl bg-red-500/10 ring-1 ring-red-400/20 p-5 text-slate-200/85">
+    <ul class="list-disc pl-6 space-y-2">
+      <li><span class="font-mono">"30"</span> (string) আর <span class="font-mono">30</span> (int) এক জিনিস নয়</li>
+      <li><span class="font-mono">"5" + 3</span> করলে error হবে (আগে <span class="font-mono">int("5")</span>)</li>
+      <li><span class="font-mono">int("12.75")</span> দিলে error (float string → <span class="font-mono">float()</span> ব্যবহার করো)</li>
+    </ul>
+  </div>
+
+  <!-- Practice -->
+  <div class="mt-10 rounded-xl bg-white/5 ring-1 ring-white/10 p-5">
+    <div class="font-extrabold">অনুশীলন (Practice)</div>
+    <ol class="mt-3 list-decimal pl-6 text-slate-200/85 space-y-2">
+      <li><span class="font-bold">name</span> (str), <span class="font-bold">age</span> (int), <span class="font-bold">price</span> (float), <span class="font-bold">is_student</span> (bool) ভ্যারিয়েবল বানাও এবং <span class="font-mono">type()</span> দিয়ে টাইপ প্রিন্ট করো।</li>
+      <li><span class="font-mono">"100"</span> কে int বানিয়ে 25 যোগ করে প্রিন্ট করো।</li>
+      <li>ইউজার থেকে <span class="font-bold">দুটি সংখ্যা</span> ইনপুট নিয়ে যোগফল বের করো (input + int casting)।</li>
+      <li><span class="font-mono">bool()</span> দিয়ে পরীক্ষা করো: <span class="font-mono">0</span>, <span class="font-mono">1</span>, <span class="font-mono">""</span>, <span class="font-mono">"Hi"</span> — কোনগুলো True/False হয়?</li>
+      <li>একটা float সংখ্যা নিয়ে <span class="font-mono">round(x, 2)</span> ব্যবহার করে 2 decimal এ দেখাও।</li>
+    </ol>
+  </div>
+</section>

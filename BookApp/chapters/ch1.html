@@ -1,0 +1,235 @@
+<section class="reveal rounded-2xl border border-white/10 bg-white/5 p-6 sm:p-8">
+  <h2 class="text-2xl sm:text-3xl font-extrabold">অধ্যায় ১: ভ্যারিয়েবল (Variables)</h2>
+
+  <p class="mt-4 text-slate-200/85">
+    ভ্যারিয়েবলকে তুমি ভাবতে পারো একটা নাম দেওয়া বাক্স (box)। এই বাক্সের ভিতরে তুমি তথ্য রাখবে—যেমন নাম,
+    বয়স, দাম, নম্বর ইত্যাদি। পরে দরকার হলে সেই নাম ধরে তথ্য বের করতে পারবে।
+  </p>
+
+  <!-- Why variables -->
+  <div class="mt-5 rounded-xl bg-blue-500/10 ring-1 ring-blue-400/20 p-4 text-slate-200/90">
+    <div class="font-extrabold text-blue-200">ভ্যারিয়েবল কেন দরকার?</div>
+    <ul class="mt-2 list-disc pl-6 space-y-1">
+      <li>তথ্য ধরে রাখা (store)</li>
+      <li>পরে ব্যবহার করা (reuse)</li>
+      <li>মান পরিবর্তন করা (update)</li>
+      <li>হিসাব/লজিক করা (calculate)</li>
+    </ul>
+  </div>
+
+  <!-- Assignment meaning -->
+  <h3 class="mt-8 text-xl font-extrabold">`=` মানে কী?</h3>
+  <p class="mt-3 text-slate-200/85">
+    Python-এ <span class="font-bold">`=`</span> মানে “সমান” নয়। এটা মানে <span class="font-bold">assign</span> করা।
+    অর্থাৎ, ডান পাশের মানটা বাম পাশের ভ্যারিয়েবলে রাখা।
+  </p>
+
+  <!-- Naming rules -->
+  <h3 class="mt-8 text-xl font-extrabold">ভ্যারিয়েবল নাম দেওয়ার নিয়ম (Naming Rules)</h3>
+  <ul class="mt-4 list-disc pl-6 text-slate-200/85 space-y-2">
+    <li>নামের ভিতরে letter / number / underscore (_) থাকতে পারে</li>
+    <li>নাম number দিয়ে শুরু করা যাবে না</li>
+    <li>Python case-sensitive → <span class="font-bold">name</span> আর <span class="font-bold">Name</span> আলাদা</li>
+    <li>reserved keyword (if/for/def/while) ভ্যারিয়েবল নাম হতে পারবে না</li>
+    <li>অর্থপূর্ণ নাম ব্যবহার করো (age, total_price)</li>
+  </ul>
+
+  <!-- Good vs Bad names -->
+  <div class="mt-5 rounded-xl bg-white/5 ring-1 ring-white/10 p-4">
+    <div class="text-sm font-extrabold text-slate-200">ভুল বনাম সঠিক (❌ vs ✅)</div>
+    <div class="mt-3 grid gap-3 lg:grid-cols-2 text-sm">
+      <div class="rounded-lg bg-red-500/10 ring-1 ring-red-400/20 p-3">
+        <div class="font-bold text-red-200">❌ ভুল</div>
+        <ul class="mt-2 list-disc pl-5 space-y-1 text-slate-200/85">
+          <li><span class="font-mono">1name</span> (number দিয়ে শুরু)</li>
+          <li><span class="font-mono">my name</span> (space আছে)</li>
+          <li><span class="font-mono">if</span> (keyword)</li>
+        </ul>
+      </div>
+      <div class="rounded-lg bg-emerald-500/10 ring-1 ring-emerald-400/20 p-3">
+        <div class="font-bold text-emerald-200">✅ সঠিক</div>
+        <ul class="mt-2 list-disc pl-5 space-y-1 text-slate-200/85">
+          <li><span class="font-mono">name</span></li>
+          <li><span class="font-mono">total_price</span></li>
+          <li><span class="font-mono">student_age</span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- Example 1 -->
+  <div class="mt-6 editor">
+    <div class="editor-top px-4 py-3 flex items-center justify-between gap-3">
+      <div class="flex items-center gap-2">
+        <span class="dot" style="background:#ff5f57"></span>
+        <span class="dot" style="background:#febc2e"></span>
+        <span class="dot" style="background:#28c840"></span>
+        <span class="ml-2 text-xs text-slate-200/85">variables_basic.py</span>
+      </div>
+      <button class="rounded-lg bg-white/10 hover:bg-white/15 px-3 py-1.5 text-xs font-bold ring-1 ring-white/10 transition"
+        data-copy="ch1-code-1">Copy</button>
+    </div>
+
+    <div class="grid lg:grid-cols-2">
+      <div class="p-4">
+        <div class="text-xs font-bold text-slate-300/80 mb-2">Code</div>
+        <pre id="ch1-code-1" class="code-area text-slate-100 whitespace-pre overflow-x-auto"><code>name = "Rahim"
+age = 30
+
+print("Name:", name)
+print("Age:", age)</code></pre>
+      </div>
+
+      <div class="p-4 border-t lg:border-t-0 lg:border-l border-white/10 bg-white/5">
+        <div class="text-xs font-bold text-slate-300/80 mb-2">OUTPUT</div>
+        <pre class="out-area text-emerald-200 whitespace-pre overflow-x-auto">Name: Rahim
+Age: 30</pre>
+      </div>
+    </div>
+  </div>
+
+  <!-- Re-assign -->
+  <h3 class="mt-8 text-xl font-extrabold">মান পরিবর্তন (Re-assign)</h3>
+  <p class="mt-3 text-slate-200/85">
+    ভ্যারিয়েবল যেহেতু “চলক”, তাই এর মান পরে পরিবর্তন করা যায়। নতুন মান assign করলে পুরনো মানটা replace হয়ে যায়।
+  </p>
+
+  <div class="mt-4 editor">
+    <div class="editor-top px-4 py-3 flex items-center justify-between gap-3">
+      <div class="flex items-center gap-2">
+        <span class="dot" style="background:#ff5f57"></span>
+        <span class="dot" style="background:#febc2e"></span>
+        <span class="dot" style="background:#28c840"></span>
+        <span class="ml-2 text-xs text-slate-200/85">reassign_points.py</span>
+      </div>
+      <button class="rounded-lg bg-white/10 hover:bg-white/15 px-3 py-1.5 text-xs font-bold ring-1 ring-white/10 transition"
+        data-copy="ch1-code-3">Copy</button>
+    </div>
+
+    <div class="grid lg:grid-cols-2">
+      <div class="p-4">
+        <div class="text-xs font-bold text-slate-300/80 mb-2">Code</div>
+        <pre id="ch1-code-3" class="code-area text-slate-100 whitespace-pre overflow-x-auto"><code>points = 100
+print("Initial:", points)
+
+points = 120
+print("Updated:", points)
+
+points = points + 50
+print("Final:", points)</code></pre>
+      </div>
+
+      <div class="p-4 border-t lg:border-t-0 lg:border-l border-white/10 bg-white/5">
+        <div class="text-xs font-bold text-slate-300/80 mb-2">OUTPUT</div>
+        <pre class="out-area text-emerald-200 whitespace-pre overflow-x-auto">Initial: 100
+Updated: 120
+Final: 170</pre>
+      </div>
+    </div>
+  </div>
+
+  <!-- None -->
+  <h3 class="mt-8 text-xl font-extrabold">None কী? (No Value Yet)</h3>
+  <p class="mt-3 text-slate-200/85">
+    <span class="font-bold">None</span> মানে: এই ভ্যারিয়েবলে এখনো কোনো মান সেট করা নেই।
+    এটা <span class="font-bold">0</span> বা <span class="font-bold">""</span> (empty string) না।
+    None হলো “no value / unknown”.
+  </p>
+
+  <div class="mt-4 editor">
+    <div class="editor-top px-4 py-3 flex items-center justify-between gap-3">
+      <div class="flex items-center gap-2">
+        <span class="dot" style="background:#ff5f57"></span>
+        <span class="dot" style="background:#febc2e"></span>
+        <span class="dot" style="background:#28c840"></span>
+        <span class="ml-2 text-xs text-slate-200/85">none_check.py</span>
+      </div>
+      <button class="rounded-lg bg-white/10 hover:bg-white/15 px-3 py-1.5 text-xs font-bold ring-1 ring-white/10 transition"
+        data-copy="ch1-code-2">Copy</button>
+    </div>
+
+    <div class="grid lg:grid-cols-2">
+      <div class="p-4">
+        <div class="text-xs font-bold text-slate-300/80 mb-2">Code</div>
+        <pre id="ch1-code-2" class="code-area text-slate-100 whitespace-pre overflow-x-auto"><code>favorite_color = None
+
+if favorite_color is None:
+    print("Not set yet")
+
+favorite_color = "Blue"
+
+if favorite_color is not None:
+    print("Now:", favorite_color)</code></pre>
+      </div>
+
+      <div class="p-4 border-t lg:border-t-0 lg:border-l border-white/10 bg-white/5">
+        <div class="text-xs font-bold text-slate-300/80 mb-2">OUTPUT</div>
+        <pre class="out-area text-emerald-200 whitespace-pre overflow-x-auto">Not set yet
+Now: Blue</pre>
+      </div>
+    </div>
+  </div>
+
+  <!-- Extra (no data types details) -->
+  <h3 class="mt-8 text-xl font-extrabold">Extra (যা জানলে কাজ অনেক সহজ হবে)</h3>
+  <p class="mt-3 text-slate-200/85">
+    এগুলো শুধু ভ্যারিয়েবল ব্যবহারকে আরও স্মার্ট করে। ডেটা টাইপের বিস্তারিত আমরা Chapter 2-এ করব।
+  </p>
+
+  <div class="mt-4 editor">
+    <div class="editor-top px-4 py-3 flex items-center justify-between gap-3">
+      <div class="flex items-center gap-2">
+        <span class="dot" style="background:#ff5f57"></span>
+        <span class="dot" style="background:#febc2e"></span>
+        <span class="dot" style="background:#28c840"></span>
+        <span class="ml-2 text-xs text-slate-200/85">variables_extra.py</span>
+      </div>
+      <button class="rounded-lg bg-white/10 hover:bg-white/15 px-3 py-1.5 text-xs font-bold ring-1 ring-white/10 transition"
+        data-copy="ch1-code-4">Copy</button>
+    </div>
+
+    <div class="grid lg:grid-cols-2">
+      <div class="p-4">
+        <div class="text-xs font-bold text-slate-300/80 mb-2">Code</div>
+        <pre id="ch1-code-4" class="code-area text-slate-100 whitespace-pre overflow-x-auto"><code># Multiple assignment
+x, y = 5, 10
+print("x =", x, "y =", y)
+
+# Swap (Python way)
+a = "Apple"
+b = "Banana"
+a, b = b, a
+print("a =", a, "b =", b)
+
+# Update shortcut
+points = 100
+points += 20
+print("points =", points)
+
+# Clean output (f-string)
+name = "Rahim"
+print(f"Hello, {name}!")</code></pre>
+      </div>
+
+      <div class="p-4 border-t lg:border-t-0 lg:border-l border-white/10 bg-white/5">
+        <div class="text-xs font-bold text-slate-300/80 mb-2">OUTPUT</div>
+        <pre class="out-area text-emerald-200 whitespace-pre overflow-x-auto">x = 5 y = 10
+a = Banana b = Apple
+points = 120
+Hello, Rahim!</pre>
+      </div>
+    </div>
+  </div>
+
+  <!-- Quick practice -->
+  <div class="mt-8 rounded-xl bg-white/5 ring-1 ring-white/10 p-5">
+    <div class="font-extrabold">অনুশীলন (Practice)</div>
+    <ol class="mt-3 list-decimal pl-6 text-slate-200/85 space-y-2">
+      <li><span class="font-bold">city</span> নামে ভ্যারিয়েবল বানিয়ে তোমার শহরের নাম রাখো এবং print করো।</li>
+      <li><span class="font-bold">price</span> নামে ভ্যারিয়েবল বানিয়ে 50 রাখো, তারপর 20 যোগ করে নতুন মান print করো।</li>
+      <li><span class="font-bold">favorite_food</span> শুরুতে None রাখো, পরে একটি খাবারের নাম assign করে print করো।</li>
+      <li><span class="font-bold">x, y</span> এক লাইনে সেট করো (multiple assignment) এবং print করো।</li>
+      <li><span class="font-bold">a, b</span> দুইটা ভ্যারিয়েবল swap করে print করো।</li>
+    </ol>
+  </div>
+</section>

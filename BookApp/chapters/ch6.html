@@ -1,0 +1,232 @@
+<section class="reveal rounded-2xl border border-white/10 bg-white/5 p-6 sm:p-8">
+  <h2 class="text-2xl sm:text-3xl font-extrabold">অধ্যায় ৬: লুপস (Loops) — বারবার কাজ অটো করা</h2>
+
+  <p class="mt-4 text-slate-200/85">
+    একই কাজ বারবার করতে হলে আমরা <span class="font-bold">Loop</span> ব্যবহার করি।
+    যেমন ১ থেকে ৫ পর্যন্ত প্রিন্ট করা, বা একটা লিস্টের সব আইটেম দেখানো।
+    লুপ মানে—একটা কোড ব্লক বারবার চলবে, যতক্ষণ না নির্দিষ্ট শর্ত শেষ হয়।
+  </p>
+
+  <!-- Why loops -->
+  <div class="mt-5 rounded-xl bg-blue-500/10 ring-1 ring-blue-400/20 p-4 text-slate-200/90">
+    <div class="font-extrabold text-blue-200">Loop কেন দরকার?</div>
+    <ul class="mt-2 list-disc pl-6 space-y-1">
+      <li>অনেকগুলো ডেটার উপর একই কাজ করতে (list/array)</li>
+      <li>repetitive কাজকে short এবং clean করতে</li>
+      <li>pattern/series print করতে</li>
+      <li>কোনো শর্ত পূরণ না হওয়া পর্যন্ত কাজ চালাতে</li>
+    </ul>
+  </div>
+
+  <!-- for loop -->
+  <h3 class="mt-10 text-xl font-extrabold">১) for লুপ (range দিয়ে)</h3>
+  <p class="mt-3 text-slate-200/85">
+    <span class="font-mono">for</span> লুপ সাধারণত ব্যবহার হয় যখন আমরা জানি কতবার লুপ চলবে।
+    <span class="font-mono">range(start, stop)</span> এ <span class="font-mono">stop</span> include হয় না।
+    তাই <span class="font-mono">range(1, 6)</span> মানে ১ থেকে ৫।
+  </p>
+
+  <div class="mt-4 editor">
+    <div class="editor-top px-4 py-3 flex items-center justify-between gap-3">
+      <div class="flex items-center gap-2">
+        <span class="dot" style="background:#ff5f57"></span>
+        <span class="dot" style="background:#febc2e"></span>
+        <span class="dot" style="background:#28c840"></span>
+        <span class="ml-2 text-xs text-slate-200/85">for_range.py</span>
+      </div>
+      <button class="rounded-lg bg-white/10 hover:bg-white/15 px-3 py-1.5 text-xs font-bold ring-1 ring-white/10 transition"
+        data-copy="ch6-code-1">Copy</button>
+    </div>
+
+    <div class="grid lg:grid-cols-2">
+      <div class="p-4">
+        <div class="text-xs font-bold text-slate-300/80 mb-2">Code</div>
+        <pre id="ch6-code-1" class="code-area text-slate-100 whitespace-pre overflow-x-auto"><code>for i in range(1, 6):
+    print(i)</code></pre>
+      </div>
+
+      <div class="p-4 border-t lg:border-t-0 lg:border-l border-white/10 bg-white/5">
+        <div class="text-xs font-bold text-slate-300/80 mb-2">OUTPUT</div>
+        <pre class="out-area text-emerald-200 whitespace-pre overflow-x-auto">1
+2
+3
+4
+5</pre>
+      </div>
+    </div>
+  </div>
+
+  <!-- for loop list -->
+  <h3 class="mt-10 text-xl font-extrabold">২) for লুপ (list এর উপর)</h3>
+  <p class="mt-3 text-slate-200/85">
+    List-এর সব item একটার পর একটা দেখতে সবচেয়ে clean হলো: <span class="font-mono">for item in list</span>।
+  </p>
+
+  <div class="mt-4 editor">
+    <div class="editor-top px-4 py-3 flex items-center justify-between gap-3">
+      <div class="flex items-center gap-2">
+        <span class="dot" style="background:#ff5f57"></span>
+        <span class="dot" style="background:#febc2e"></span>
+        <span class="dot" style="background:#28c840"></span>
+        <span class="ml-2 text-xs text-slate-200/85">for_list.py</span>
+      </div>
+      <button class="rounded-lg bg-white/10 hover:bg-white/15 px-3 py-1.5 text-xs font-bold ring-1 ring-white/10 transition"
+        data-copy="ch6-code-2">Copy</button>
+    </div>
+
+    <div class="grid lg:grid-cols-2">
+      <div class="p-4">
+        <div class="text-xs font-bold text-slate-300/80 mb-2">Code</div>
+        <pre id="ch6-code-2" class="code-area text-slate-100 whitespace-pre overflow-x-auto"><code>fruits = ["Apple", "Orange", "Banana"]
+
+for fruit in fruits:
+    print("Fruit:", fruit)</code></pre>
+      </div>
+
+      <div class="p-4 border-t lg:border-t-0 lg:border-l border-white/10 bg-white/5">
+        <div class="text-xs font-bold text-slate-300/80 mb-2">OUTPUT</div>
+        <pre class="out-area text-emerald-200 whitespace-pre overflow-x-auto">Fruit: Apple
+Fruit: Orange
+Fruit: Banana</pre>
+      </div>
+    </div>
+  </div>
+
+  <!-- while loop -->
+  <h3 class="mt-10 text-xl font-extrabold">৩) while লুপ (শর্ত যতক্ষণ সত্য)</h3>
+  <p class="mt-3 text-slate-200/85">
+    <span class="font-mono">while</span> লুপ চলবে যতক্ষণ শর্ত True থাকবে।
+    এখানে সবচেয়ে বড় বিপদ হলো <span class="font-bold">infinite loop</span> — মানে লুপ কখনো শেষ হবে না।
+    তাই while-এর ভিতরে এমন কিছু থাকতে হবে যাতে শর্ত একসময় False হয় (যেমন <span class="font-mono">count += 1</span>)।
+  </p>
+
+  <div class="mt-4 editor">
+    <div class="editor-top px-4 py-3 flex items-center justify-between gap-3">
+      <div class="flex items-center gap-2">
+        <span class="dot" style="background:#ff5f57"></span>
+        <span class="dot" style="background:#febc2e"></span>
+        <span class="dot" style="background:#28c840"></span>
+        <span class="ml-2 text-xs text-slate-200/85">while_basic.py</span>
+      </div>
+      <button class="rounded-lg bg-white/10 hover:bg-white/15 px-3 py-1.5 text-xs font-bold ring-1 ring-white/10 transition"
+        data-copy="ch6-code-3">Copy</button>
+    </div>
+
+    <div class="grid lg:grid-cols-2">
+      <div class="p-4">
+        <div class="text-xs font-bold text-slate-300/80 mb-2">Code</div>
+        <pre id="ch6-code-3" class="code-area text-slate-100 whitespace-pre overflow-x-auto"><code>count = 0
+
+while count < 3:
+    print("count =", count)
+    count += 1</code></pre>
+      </div>
+
+      <div class="p-4 border-t lg:border-t-0 lg:border-l border-white/10 bg-white/5">
+        <div class="text-xs font-bold text-slate-300/80 mb-2">OUTPUT</div>
+        <pre class="out-area text-emerald-200 whitespace-pre overflow-x-auto">count = 0
+count = 1
+count = 2</pre>
+      </div>
+    </div>
+  </div>
+
+  <!-- break/continue -->
+  <h3 class="mt-10 text-xl font-extrabold">৪) break / continue (Loop control)</h3>
+  <p class="mt-3 text-slate-200/85">
+    <span class="font-mono">continue</span> মানে: এই iteration বাদ দিয়ে পরের iteration এ যাবে।
+    <span class="font-mono">break</span> মানে: লুপ একদম বন্ধ করে বের হয়ে যাবে।
+  </p>
+
+  <div class="mt-4 editor">
+    <div class="editor-top px-4 py-3 flex items-center justify-between gap-3">
+      <div class="flex items-center gap-2">
+        <span class="dot" style="background:#ff5f57"></span>
+        <span class="dot" style="background:#febc2e"></span>
+        <span class="dot" style="background:#28c840"></span>
+        <span class="ml-2 text-xs text-slate-200/85">break_continue.py</span>
+      </div>
+      <button class="rounded-lg bg-white/10 hover:bg-white/15 px-3 py-1.5 text-xs font-bold ring-1 ring-white/10 transition"
+        data-copy="ch6-code-4">Copy</button>
+    </div>
+
+    <div class="grid lg:grid-cols-2">
+      <div class="p-4">
+        <div class="text-xs font-bold text-slate-300/80 mb-2">Code</div>
+        <pre id="ch6-code-4" class="code-area text-slate-100 whitespace-pre overflow-x-auto"><code>for n in range(1, 6):
+    if n == 3:
+        continue
+    if n == 5:
+        break
+    print("n =", n)</code></pre>
+      </div>
+
+      <div class="p-4 border-t lg:border-t-0 lg:border-l border-white/10 bg-white/5">
+        <div class="text-xs font-bold text-slate-300/80 mb-2">OUTPUT</div>
+        <pre class="out-area text-emerald-200 whitespace-pre overflow-x-auto">n = 1
+n = 2
+n = 4</pre>
+      </div>
+    </div>
+  </div>
+
+  <!-- nested loops -->
+  <h3 class="mt-10 text-xl font-extrabold">৫) Nested loops (এক লুপের ভিতরে আরেক লুপ)</h3>
+  <p class="mt-3 text-slate-200/85">
+    Grid / table / pattern টাইপ কাজের জন্য nested loop ব্যবহার হয়। 
+    বাইরের লুপ একবার চললে, ভেতরের লুপ পুরোটা শেষ হয়ে তারপর বাইরের লুপ পরেরবার চলে।
+  </p>
+
+  <div class="mt-4 editor">
+    <div class="editor-top px-4 py-3 flex items-center justify-between gap-3">
+      <div class="flex items-center gap-2">
+        <span class="dot" style="background:#ff5f57"></span>
+        <span class="dot" style="background:#febc2e"></span>
+        <span class="dot" style="background:#28c840"></span>
+        <span class="ml-2 text-xs text-slate-200/85">nested_loops.py</span>
+      </div>
+      <button class="rounded-lg bg-white/10 hover:bg-white/15 px-3 py-1.5 text-xs font-bold ring-1 ring-white/10 transition"
+        data-copy="ch6-code-5">Copy</button>
+    </div>
+
+    <div class="grid lg:grid-cols-2">
+      <div class="p-4">
+        <div class="text-xs font-bold text-slate-300/80 mb-2">Code</div>
+        <pre id="ch6-code-5" class="code-area text-slate-100 whitespace-pre overflow-x-auto"><code>for row in range(2):
+    for col in range(3):
+        print(f"({row},{col})", end=" ")
+    print()</code></pre>
+      </div>
+
+      <div class="p-4 border-t lg:border-t-0 lg:border-l border-white/10 bg-white/5">
+        <div class="text-xs font-bold text-slate-300/80 mb-2">OUTPUT</div>
+        <pre class="out-area text-emerald-200 whitespace-pre overflow-x-auto">(0,0) (0,1) (0,2) 
+(1,0) (1,1) (1,2)</pre>
+      </div>
+    </div>
+  </div>
+
+  <!-- Common mistakes -->
+  <h3 class="mt-10 text-xl font-extrabold">Common Mistakes (Beginner Warning)</h3>
+  <div class="mt-4 rounded-xl bg-red-500/10 ring-1 ring-red-400/20 p-5 text-slate-200/85">
+    <ul class="list-disc pl-6 space-y-2">
+      <li><span class="font-bold">range(1, 6)</span> মানে ১-৫, ৬ include হয় না</li>
+      <li>while লুপে update না করলে <span class="font-bold">infinite loop</span> হবে</li>
+      <li>break দিলে লুপ পুরো শেষ হয়ে যায়, continue দিলে শুধু ওই iteration বাদ যায়</li>
+      <li>nested loop বেশি হলে কোড slow/জটিল হতে পারে</li>
+    </ul>
+  </div>
+
+  <!-- Practice -->
+  <div class="mt-10 rounded-xl bg-white/5 ring-1 ring-white/10 p-5">
+    <div class="font-extrabold">অনুশীলন (Practice)</div>
+    <ol class="mt-3 list-decimal pl-6 text-slate-200/85 space-y-2">
+      <li>১ থেকে ২০ পর্যন্ত শুধু জোড় সংখ্যা প্রিন্ট করো (for + if)।</li>
+      <li>একটা list বানাও এবং সব item প্রিন্ট করো (for list)।</li>
+      <li>while দিয়ে ৫ থেকে ১ পর্যন্ত কাউন্টডাউন করো।</li>
+      <li>for লুপে ১ থেকে ১০ পর্যন্ত প্রিন্ট করো, কিন্তু ৬ বাদ দাও (continue)।</li>
+      <li>১ থেকে ১০ পর্যন্ত প্রিন্ট করো, কিন্তু ৮ এ পৌঁছালে থামাও (break)।</li>
+      <li>nested loop দিয়ে 3x3 grid coordinate প্রিন্ট করো।</li>
+    </ol>
+  </div>
+</section>

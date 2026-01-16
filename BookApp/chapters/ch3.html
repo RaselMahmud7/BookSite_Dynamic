@@ -1,0 +1,397 @@
+<section class="reveal rounded-2xl border border-white/10 bg-white/5 p-6 sm:p-8">
+  <h2 class="text-2xl sm:text-3xl font-extrabold">অধ্যায় ৩: অপারেটর (Operators)</h2>
+
+  <p class="mt-4 text-slate-200/85">
+    প্রোগ্রামিংয়ে শুধু ডেটা রাখলেই হয় না — সেই ডেটার উপর কাজও করতে হয়। যেমন যোগ-বিয়োগ, তুলনা, শর্ত চেক,
+    মান আপডেট ইত্যাদি। এই কাজগুলো করানোর জন্য আমরা ব্যবহার করি <span class="font-bold">Operators</span>।
+    অপারেটর হলো কিছু বিশেষ চিহ্ন বা শব্দ, যা Python-কে বলে দেয় “কী কাজ করতে হবে”।
+  </p>
+
+  <!-- What is operator -->
+  <div class="mt-5 rounded-xl bg-blue-500/10 ring-1 ring-blue-400/20 p-4 text-slate-200/90">
+    <div class="font-extrabold text-blue-200">Operator কী?</div>
+    <p class="mt-2">
+      Operator হলো এমন একটি প্রতীক/কীওয়ার্ড যেটা এক বা একাধিক মানের (operand) উপর একটি অপারেশন চালায়।
+      যেমন <span class="font-mono">10 + 5</span> এ <span class="font-mono">+</span> হলো operator,
+      আর <span class="font-mono">10</span> এবং <span class="font-mono">5</span> হলো operands।
+    </p>
+  </div>
+
+  <!-- Arithmetic -->
+  <h3 class="mt-10 text-xl font-extrabold">১) গাণিতিক অপারেটর (Arithmetic Operators)</h3>
+  <p class="mt-3 text-slate-200/85">
+    সংখ্যা নিয়ে কাজ করার জন্য গাণিতিক অপারেটর ব্যবহার হয়।
+  </p>
+
+  <div class="mt-4 rounded-xl bg-white/5 ring-1 ring-white/10 p-5 text-slate-200/85">
+    <ul class="grid sm:grid-cols-2 gap-2 list-disc pl-6">
+      <li><span class="font-mono">+</span> যোগ</li>
+      <li><span class="font-mono">-</span> বিয়োগ</li>
+      <li><span class="font-mono">*</span> গুণ</li>
+      <li><span class="font-mono">/</span> ভাগ (ফল float আসে)</li>
+      <li><span class="font-mono">//</span> ফ্লোর ডিভিশন (পূর্ণ ভাগফল)</li>
+      <li><span class="font-mono">%</span> মডুলাস (ভাগশেষ)</li>
+      <li><span class="font-mono">**</span> পাওয়ার (সূচক)</li>
+    </ul>
+  </div>
+
+  <div class="mt-4 editor">
+    <div class="editor-top px-4 py-3 flex items-center justify-between gap-3">
+      <div class="flex items-center gap-2">
+        <span class="dot" style="background:#ff5f57"></span>
+        <span class="dot" style="background:#febc2e"></span>
+        <span class="dot" style="background:#28c840"></span>
+        <span class="ml-2 text-xs text-slate-200/85">arithmetic_ops.py</span>
+      </div>
+      <button class="rounded-lg bg-white/10 hover:bg-white/15 px-3 py-1.5 text-xs font-bold ring-1 ring-white/10 transition"
+        data-copy="ch3-code-1">Copy</button>
+    </div>
+
+    <div class="grid lg:grid-cols-2">
+      <div class="p-4">
+        <div class="text-xs font-bold text-slate-300/80 mb-2">Code</div>
+        <pre id="ch3-code-1" class="code-area text-slate-100 whitespace-pre overflow-x-auto"><code>x = 20
+y = 3
+
+print("Add:", x + y)
+print("Sub:", x - y)
+print("Mul:", x * y)
+print("Div:", x / y)
+print("Floor:", x // y)
+print("Mod:", x % y)
+print("Power:", x ** y)</code></pre>
+      </div>
+
+      <div class="p-4 border-t lg:border-t-0 lg:border-l border-white/10 bg-white/5">
+        <div class="text-xs font-bold text-slate-300/80 mb-2">OUTPUT</div>
+        <pre class="out-area text-emerald-200 whitespace-pre overflow-x-auto">Add: 23
+Sub: 17
+Mul: 60
+Div: 6.666666666666667
+Floor: 6
+Mod: 2
+Power: 8000</pre>
+      </div>
+    </div>
+  </div>
+
+  <div class="mt-6 rounded-xl bg-white/5 ring-1 ring-white/10 p-5 text-slate-200/85">
+    <div class="font-extrabold text-slate-100">Extra: Modulus (%) কেন দরকার?</div>
+    <ul class="mt-2 list-disc pl-6 space-y-2">
+      <li>জোড়/বিজোড় চেক: <span class="font-mono">n % 2 == 0</span></li>
+      <li>ঘড়ি/চক্রাকারে হিসাব: 13 ঘন্টা পরে সময় বের করা</li>
+      <li>লুপে pattern তৈরি</li>
+    </ul>
+  </div>
+
+  <!-- Assignment -->
+  <h3 class="mt-10 text-xl font-extrabold">২) অ্যাসাইনমেন্ট অপারেটর (Assignment Operators)</h3>
+  <p class="mt-3 text-slate-200/85">
+    ভ্যারিয়েবলে মান সেট/আপডেট করতে assignment operators ব্যবহার হয়।
+    <span class="font-mono">=</span> দিয়ে মান বসানো হয়, আর <span class="font-mono">+=</span> এর মতো শর্টকাট দিয়ে আপডেট করা হয়।
+  </p>
+
+  <div class="mt-4 rounded-xl bg-white/5 ring-1 ring-white/10 p-5 text-slate-200/85">
+    <ul class="grid sm:grid-cols-2 gap-2 list-disc pl-6">
+      <li><span class="font-mono">=</span> assign</li>
+      <li><span class="font-mono">+=</span> add & assign</li>
+      <li><span class="font-mono">-=</span> subtract & assign</li>
+      <li><span class="font-mono">*=</span> multiply & assign</li>
+      <li><span class="font-mono">/=</span> divide & assign</li>
+      <li><span class="font-mono">//=</span> floor divide & assign</li>
+      <li><span class="font-mono">%=</span> mod & assign</li>
+      <li><span class="font-mono">**=</span> power & assign</li>
+    </ul>
+  </div>
+
+  <div class="mt-4 editor">
+    <div class="editor-top px-4 py-3 flex items-center justify-between gap-3">
+      <div class="flex items-center gap-2">
+        <span class="dot" style="background:#ff5f57"></span>
+        <span class="dot" style="background:#febc2e"></span>
+        <span class="dot" style="background:#28c840"></span>
+        <span class="ml-2 text-xs text-slate-200/85">assignment_ops.py</span>
+      </div>
+      <button class="rounded-lg bg-white/10 hover:bg-white/15 px-3 py-1.5 text-xs font-bold ring-1 ring-white/10 transition"
+        data-copy="ch3-code-2">Copy</button>
+    </div>
+
+    <div class="grid lg:grid-cols-2">
+      <div class="p-4">
+        <div class="text-xs font-bold text-slate-300/80 mb-2">Code</div>
+        <pre id="ch3-code-2" class="code-area text-slate-100 whitespace-pre overflow-x-auto"><code>score = 10
+score += 5
+print("After += 5:", score)
+
+score *= 2
+print("After *= 2:", score)
+
+score -= 3
+print("After -= 3:", score)</code></pre>
+      </div>
+
+      <div class="p-4 border-t lg:border-t-0 lg:border-l border-white/10 bg-white/5">
+        <div class="text-xs font-bold text-slate-300/80 mb-2">OUTPUT</div>
+        <pre class="out-area text-emerald-200 whitespace-pre overflow-x-auto">After += 5: 15
+After *= 2: 30
+After -= 3: 27</pre>
+      </div>
+    </div>
+  </div>
+
+  <!-- Comparison -->
+  <h3 class="mt-10 text-xl font-extrabold">৩) তুলনামূলক অপারেটর (Comparison Operators)</h3>
+  <p class="mt-3 text-slate-200/85">
+    দুটি মান তুলনা করে ফল হিসেবে <span class="font-bold">True/False</span> দেয়। এগুলো বেশি ব্যবহার হয় <span class="font-mono">if</span> শর্তে।
+  </p>
+
+  <div class="mt-4 rounded-xl bg-white/5 ring-1 ring-white/10 p-5 text-slate-200/85">
+    <ul class="grid sm:grid-cols-2 gap-2 list-disc pl-6">
+      <li><span class="font-mono">==</span> equal</li>
+      <li><span class="font-mono">!=</span> not equal</li>
+      <li><span class="font-mono">&gt;</span> greater than</li>
+      <li><span class="font-mono">&lt;</span> less than</li>
+      <li><span class="font-mono">&gt;=</span> greater or equal</li>
+      <li><span class="font-mono">&lt;=</span> less or equal</li>
+    </ul>
+  </div>
+
+  <div class="mt-4 editor">
+    <div class="editor-top px-4 py-3 flex items-center justify-between gap-3">
+      <div class="flex items-center gap-2">
+        <span class="dot" style="background:#ff5f57"></span>
+        <span class="dot" style="background:#febc2e"></span>
+        <span class="dot" style="background:#28c840"></span>
+        <span class="ml-2 text-xs text-slate-200/85">comparison_ops.py</span>
+      </div>
+      <button class="rounded-lg bg-white/10 hover:bg-white/15 px-3 py-1.5 text-xs font-bold ring-1 ring-white/10 transition"
+        data-copy="ch3-code-3">Copy</button>
+    </div>
+
+    <div class="grid lg:grid-cols-2">
+      <div class="p-4">
+        <div class="text-xs font-bold text-slate-300/80 mb-2">Code</div>
+        <pre id="ch3-code-3" class="code-area text-slate-100 whitespace-pre overflow-x-auto"><code>a = 25
+b = 18
+
+print("a == b:", a == b)
+print("a != b:", a != b)
+print("a > b :", a > b)
+print("a < b :", a < b)
+print("a >= 25:", a >= 25)
+print("b <= 18:", b <= 18)</code></pre>
+      </div>
+
+      <div class="p-4 border-t lg:border-t-0 lg:border-l border-white/10 bg-white/5">
+        <div class="text-xs font-bold text-slate-300/80 mb-2">OUTPUT</div>
+        <pre class="out-area text-emerald-200 whitespace-pre overflow-x-auto">a == b: False
+a != b: True
+a > b : True
+a < b : False
+a >= 25: True
+b <= 18: True</pre>
+      </div>
+    </div>
+  </div>
+
+  <!-- Logical -->
+  <h3 class="mt-10 text-xl font-extrabold">৪) লজিক্যাল অপারেটর (Logical Operators)</h3>
+  <p class="mt-3 text-slate-200/85">
+    একাধিক শর্ত একসাথে চেক করতে logical operators ব্যবহার হয়।
+  </p>
+
+  <div class="mt-4 rounded-xl bg-white/5 ring-1 ring-white/10 p-5 text-slate-200/85">
+    <ul class="list-disc pl-6 space-y-2">
+      <li><span class="font-mono">and</span> → দুটো শর্তই True হলে True</li>
+      <li><span class="font-mono">or</span> → অন্তত ১টা শর্ত True হলে True</li>
+      <li><span class="font-mono">not</span> → শর্তের উল্টো মান</li>
+    </ul>
+  </div>
+
+  <div class="mt-4 editor">
+    <div class="editor-top px-4 py-3 flex items-center justify-between gap-3">
+      <div class="flex items-center gap-2">
+        <span class="dot" style="background:#ff5f57"></span>
+        <span class="dot" style="background:#febc2e"></span>
+        <span class="dot" style="background:#28c840"></span>
+        <span class="ml-2 text-xs text-slate-200/85">logical_ops.py</span>
+      </div>
+      <button class="rounded-lg bg-white/10 hover:bg-white/15 px-3 py-1.5 text-xs font-bold ring-1 ring-white/10 transition"
+        data-copy="ch3-code-4">Copy</button>
+    </div>
+
+    <div class="grid lg:grid-cols-2">
+      <div class="p-4">
+        <div class="text-xs font-bold text-slate-300/80 mb-2">Code</div>
+        <pre id="ch3-code-4" class="code-area text-slate-100 whitespace-pre overflow-x-auto"><code>age = 20
+has_id = True
+
+if age >= 18 and has_id:
+    print("You can enter!")
+
+is_weekend = False
+if is_weekend or age < 12:
+    print("Discount available")
+else:
+    print("No discount")</code></pre>
+      </div>
+
+      <div class="p-4 border-t lg:border-t-0 lg:border-l border-white/10 bg-white/5">
+        <div class="text-xs font-bold text-slate-300/80 mb-2">OUTPUT</div>
+        <pre class="out-area text-emerald-200 whitespace-pre overflow-x-auto">You can enter!
+No discount</pre>
+      </div>
+    </div>
+  </div>
+
+  <!-- Membership -->
+  <h3 class="mt-10 text-xl font-extrabold">৫) Membership Operators (in / not in)</h3>
+  <p class="mt-3 text-slate-200/85">
+    কোনো তালিকা/স্ট্রিং/সেট-এর ভিতরে কোনো মান আছে কিনা চেক করতে <span class="font-mono">in</span> ব্যবহার হয়।
+    এটা lists/strings এ খুব দরকার।
+  </p>
+
+  <div class="mt-4 editor">
+    <div class="editor-top px-4 py-3 flex items-center justify-between gap-3">
+      <div class="flex items-center gap-2">
+        <span class="dot" style="background:#ff5f57"></span>
+        <span class="dot" style="background:#febc2e"></span>
+        <span class="dot" style="background:#28c840"></span>
+        <span class="ml-2 text-xs text-slate-200/85">membership_ops.py</span>
+      </div>
+      <button class="rounded-lg bg-white/10 hover:bg-white/15 px-3 py-1.5 text-xs font-bold ring-1 ring-white/10 transition"
+        data-copy="ch3-code-5">Copy</button>
+    </div>
+
+    <div class="grid lg:grid-cols-2">
+      <div class="p-4">
+        <div class="text-xs font-bold text-slate-300/80 mb-2">Code</div>
+        <pre id="ch3-code-5" class="code-area text-slate-100 whitespace-pre overflow-x-auto"><code>fruits = ["Apple", "Banana", "Mango"]
+
+print("Banana" in fruits)
+print("Grape" not in fruits)
+
+text = "Hello World"
+print("World" in text)</code></pre>
+      </div>
+
+      <div class="p-4 border-t lg:border-t-0 lg:border-l border-white/10 bg-white/5">
+        <div class="text-xs font-bold text-slate-300/80 mb-2">OUTPUT</div>
+        <pre class="out-area text-emerald-200 whitespace-pre overflow-x-auto">True
+True
+True</pre>
+      </div>
+    </div>
+  </div>
+
+  <!-- Identity -->
+  <h3 class="mt-10 text-xl font-extrabold">৬) Identity Operators (is / is not)</h3>
+  <p class="mt-3 text-slate-200/85">
+    <span class="font-mono">is</span> আর <span class="font-mono">==</span> এক না।
+    <span class="font-mono">==</span> মানে value সমান কিনা,
+    আর <span class="font-mono">is</span> মানে একই object কিনা।
+    Beginner level-এ সবচেয়ে বেশি ব্যবহার হবে <span class="font-mono">None</span> চেক করার জন্য:
+    <span class="font-mono">x is None</span>
+  </p>
+
+  <div class="mt-4 editor">
+    <div class="editor-top px-4 py-3 flex items-center justify-between gap-3">
+      <div class="flex items-center gap-2">
+        <span class="dot" style="background:#ff5f57"></span>
+        <span class="dot" style="background:#febc2e"></span>
+        <span class="dot" style="background:#28c840"></span>
+        <span class="ml-2 text-xs text-slate-200/85">identity_ops.py</span>
+      </div>
+      <button class="rounded-lg bg-white/10 hover:bg-white/15 px-3 py-1.5 text-xs font-bold ring-1 ring-white/10 transition"
+        data-copy="ch3-code-6">Copy</button>
+    </div>
+
+    <div class="grid lg:grid-cols-2">
+      <div class="p-4">
+        <div class="text-xs font-bold text-slate-300/80 mb-2">Code</div>
+        <pre id="ch3-code-6" class="code-area text-slate-100 whitespace-pre overflow-x-auto"><code>x = None
+
+if x is None:
+    print("x is None")
+
+y = 10
+if y is not None:
+    print("y has value")</code></pre>
+      </div>
+
+      <div class="p-4 border-t lg:border-t-0 lg:border-l border-white/10 bg-white/5">
+        <div class="text-xs font-bold text-slate-300/80 mb-2">OUTPUT</div>
+        <pre class="out-area text-emerald-200 whitespace-pre overflow-x-auto">x is None
+y has value</pre>
+      </div>
+    </div>
+  </div>
+
+  <!-- Operator precedence -->
+  <h3 class="mt-10 text-xl font-extrabold">৭) Operator Precedence (কোনটা আগে হবে?)</h3>
+  <p class="mt-3 text-slate-200/85">
+    একই লাইনে অনেক অপারেটর থাকলে কিছু অপারেটর আগে কাজ করে। সহজভাবে:
+    <span class="font-bold">()</span> আগে,
+    তারপর <span class="font-mono">**</span>,
+    তারপর <span class="font-mono">*</span> <span class="font-mono">/</span> <span class="font-mono">//</span> <span class="font-mono">%</span>,
+    তারপর <span class="font-mono">+</span> <span class="font-mono">-</span>,
+    তারপর comparisons,
+    তারপর <span class="font-mono">not</span> → <span class="font-mono">and</span> → <span class="font-mono">or</span>।
+    সন্দেহ হলে bracket ব্যবহার করো।
+  </p>
+
+  <div class="mt-4 editor">
+    <div class="editor-top px-4 py-3 flex items-center justify-between gap-3">
+      <div class="flex items-center gap-2">
+        <span class="dot" style="background:#ff5f57"></span>
+        <span class="dot" style="background:#febc2e"></span>
+        <span class="dot" style="background:#28c840"></span>
+        <span class="ml-2 text-xs text-slate-200/85">precedence.py</span>
+      </div>
+      <button class="rounded-lg bg-white/10 hover:bg-white/15 px-3 py-1.5 text-xs font-bold ring-1 ring-white/10 transition"
+        data-copy="ch3-code-7">Copy</button>
+    </div>
+
+    <div class="grid lg:grid-cols-2">
+      <div class="p-4">
+        <div class="text-xs font-bold text-slate-300/80 mb-2">Code</div>
+        <pre id="ch3-code-7" class="code-area text-slate-100 whitespace-pre overflow-x-auto"><code>result1 = 2 + 3 * 4
+result2 = (2 + 3) * 4
+
+print("Without ():", result1)
+print("With ()   :", result2)</code></pre>
+      </div>
+
+      <div class="p-4 border-t lg:border-t-0 lg:border-l border-white/10 bg-white/5">
+        <div class="text-xs font-bold text-slate-300/80 mb-2">OUTPUT</div>
+        <pre class="out-area text-emerald-200 whitespace-pre overflow-x-auto">Without (): 14
+With ()   : 20</pre>
+      </div>
+    </div>
+  </div>
+
+  <!-- Common mistakes -->
+  <h3 class="mt-10 text-xl font-extrabold">Common Mistakes (Beginner Warning)</h3>
+  <div class="mt-4 rounded-xl bg-red-500/10 ring-1 ring-red-400/20 p-5 text-slate-200/85">
+    <ul class="list-disc pl-6 space-y-2">
+      <li><span class="font-mono">=</span> assign, আর <span class="font-mono">==</span> compare — গুলিয়ে ফেলো না</li>
+      <li><span class="font-mono">/</span> সবসময় float দেয়, পূর্ণ ভাগফল চাইলে <span class="font-mono">//</span></li>
+      <li>ভাগশেষ চাইলে <span class="font-mono">%</span> ব্যবহার</li>
+      <li>None চেক করতে <span class="font-mono">== None</span> না, <span class="font-mono">is None</span> ব্যবহার করো</li>
+    </ul>
+  </div>
+
+  <!-- Practice -->
+  <div class="mt-10 rounded-xl bg-white/5 ring-1 ring-white/10 p-5">
+    <div class="font-extrabold">অনুশীলন (Practice)</div>
+    <ol class="mt-3 list-decimal pl-6 text-slate-200/85 space-y-2">
+      <li>একটা সংখ্যা <span class="font-mono">n</span> নাও। <span class="font-mono">n</span> জোড় নাকি বিজোড় বের করো (modulus)।</li>
+      <li><span class="font-mono">a = 10</span>, <span class="font-mono">b = 3</span> নিয়ে <span class="font-mono">/</span> আর <span class="font-mono">//</span> এর পার্থক্য দেখাও।</li>
+      <li><span class="font-mono">score</span> ভ্যারিয়েবলে 50 দিয়ে শুরু করে <span class="font-mono">+=</span>, <span class="font-mono">*=</span> ব্যবহার করে আপডেট করো।</li>
+      <li>দুটি বয়স নিয়ে তুলনা করো: বড় কে? (comparison operators)</li>
+      <li>একটা লিস্ট বানাও এবং <span class="font-mono">in</span> দিয়ে চেক করো কোন ফল আছে কিনা।</li>
+      <li>একটা মান <span class="font-mono">None</span> হলে মেসেজ দেখাও (is None)।</li>
+      <li><span class="font-mono">2 + 3 * 4</span> আর <span class="font-mono">(2 + 3) * 4</span> তুলনা করো।</li>
+    </ol>
+  </div>
+</section>

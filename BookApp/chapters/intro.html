@@ -1,0 +1,204 @@
+<section class="reveal rounded-2xl border border-white/10 bg-white/5 p-6 sm:p-8">
+  <h1 class="text-2xl sm:text-3xl font-extrabold">ভূমিকা (Introduction) শূন্য থেকে Python</h1>
+
+  <p class="mt-4 text-slate-200/85">
+    প্রোগ্রামিং শেখা মানে শুধু কোড লেখা নয়, প্রোগ্রামিং মানে হলো <span class="font-bold">ভাবতে শেখা</span>।
+    একটি সমস্যাকে ছোট ছোট ধাপে ভেঙে, কম্পিউটারকে খুব পরিষ্কার করে বলা কী করতে হবে।
+    <span class="font-bold">“প্রথমে এটা করো, তারপর ওটা করো, শেষে ফলাফল দেখাও।”</span>
+  </p>
+
+  <p class="mt-3 text-slate-200/85">
+    কম্পিউটার আমাদের মতো বাংলা/ইংরেজি ভাষা সরাসরি বোঝে না। কম্পিউটার ভিতরে ভিতরে বোঝে শুধু
+    <span class="font-bold">০ আর ১</span> (অন/অফ)। তাহলে আমরা কীভাবে কম্পিউটারকে কাজ বলবো?
+    এজন্যই আছে <span class="font-bold">প্রোগ্রামিং ভাষা</span> যেটা মানুষ সহজে লিখতে পারে,
+    আর কম্পিউটার সেটা বুঝে কাজ করে।
+  </p>
+
+  <p class="mt-3 text-slate-200/85">
+    এই বইতে আমরা Python ব্যবহার করেছি কারণ Python শেখা সহজ, syntax পরিষ্কার, আর নতুনদের জন্য perfect।
+    তুমি একদম শুরু থেকে ধাপে ধাপে শিখবে ভ্যারিয়েবল, ডেটা টাইপ, অপারেটর, কন্ডিশনাল, লিস্ট, লুপ, ফাংশন,
+    এবং শেষ পর্যন্ত ছোট ছোট প্রজেক্ট তৈরি করতে পারবে।
+  </p>
+
+  <div class="mt-6 rounded-xl bg-blue-500/10 ring-1 ring-blue-400/20 p-5 text-slate-200/90">
+    <div class="font-extrabold text-blue-200">এই WebApp এ তুমি কী কী পাবে</div>
+    <ul class="mt-3 list-disc pl-6 space-y-2">
+      <li><span class="font-bold">Chapter wise শেখা</span> প্রতিটা টপিক আলাদা অধ্যায়ে সাজানো beginner friendly</li>
+      <li><span class="font-bold">সহজ বাংলা ব্যাখ্যা</span> সব concept সহজ সাবলীল বাংলায়</li>
+      <li><span class="font-bold">Code এবং Output একসাথে থাকবে </span> </li>
+      <li><span class="font-bold">Code editor style</span> কোড দেখাবে real code editor এর মতো copy button সহ</li>
+      <li><span class="font-bold">Copy feature</span> এক ক্লিকে code copy করতে পারবে</li>
+      <li><span class="font-bold">Practice</span> প্রতিটি অধ্যায়ের শেষে অনুশীলন থাকবে</li>
+      <li><span class="font-bold">Quick navigation</span> সূচিপত্র থেকে দ্রুত chapter change করা যাবে</li>
+      <li><span class="font-bold">Responsive design</span> মোবাইল ট্যাব ল্যাপটপ সব স্ক্রিনে সুন্দরভাবে চলবে</li>
+      <li><span class="font-bold">Smooth animation</span> সেকশনগুলো সুন্দরভাবে animate হয়ে আসবে</li>
+    </ul>
+  </div>
+
+  <div class="mt-6 rounded-xl bg-white/5 ring-1 ring-white/10 p-5 text-slate-200/85">
+    <div class="font-extrabold">কীভাবে শিখবে</div>
+    <ul class="mt-3 list-disc pl-6 space-y-2">
+      <li>উদাহরণগুলো শুধু পড়বে না নিজে টাইপ করে রান করবে</li>
+      <li>ভ্যালু বদলিয়ে দেখবে কী পরিবর্তন হয়</li>
+      <li>ভুল হলে ভয় পাবে না ভুল থেকেই শেখা সবচেয়ে বেশি হয়</li>
+      <li>প্রতিটি অধ্যায়ের শেষে Practice অবশ্যই করবে</li>
+    </ul>
+  </div>
+
+  <h2 class="mt-12 text-2xl sm:text-3xl font-extrabold">শুরু করার আগে কমেন্টস কেন গুরুত্বপূর্ণ</h2>
+
+  <p class="mt-4 text-slate-200/85">
+    কমেন্ট হলো এমন লেখা যেটা Python <span class="font-bold">রান করে না</span> শুধু মানুষ পড়ার জন্য থাকে।
+    ভালো কমেন্ট কোডকে <span class="font-bold">readable</span> এবং <span class="font-bold">maintainable</span> করে।
+    তুমি কয়েক মাস পরে নিজের কোড দেখলেও যেন বুঝতে পারো অথবা অন্য কেউ দেখলেও যেন দ্রুত বুঝতে পারে এটিই কমেন্টের কাজ।
+  </p>
+
+  <div class="mt-5 rounded-xl bg-blue-500/10 ring-1 ring-blue-400/20 p-4 text-slate-200/90">
+    <div class="font-extrabold text-blue-200">কমেন্ট কেন দরকার</div>
+    <ul class="mt-2 list-disc pl-6 space-y-1">
+      <li>কোডের উদ্দেশ্য দ্রুত বোঝাতে</li>
+      <li>জটিল লজিক বা ফর্মুলা ব্যাখ্যা করতে</li>
+      <li>ভবিষ্যতে নিজে বা টিমে কাজ করা সহজ করতে</li>
+      <li>TODO বা NOTE লিখে রাখতে পরে কী উন্নতি করবে</li>
+    </ul>
+  </div>
+
+  <h3 class="mt-10 text-xl font-extrabold">১) Single line comment (#)</h3>
+  <p class="mt-3 text-slate-200/85">
+    এক লাইনের কমেন্ট লিখতে <span class="font-mono">#</span> ব্যবহার হয়।
+    লাইনের শুরুতে লিখতে পারো আবার একই লাইনে code এর পরেও লিখতে পারো inline comment হিসেবে।
+  </p>
+
+  <div class="mt-4 editor">
+    <div class="editor-top px-4 py-3 flex items-center justify-between gap-3">
+      <div class="flex items-center gap-2">
+        <span class="dot" style="background:#ff5f57"></span>
+        <span class="dot" style="background:#febc2e"></span>
+        <span class="dot" style="background:#28c840"></span>
+        <span class="ml-2 text-xs text-slate-200/85">single_comments.py</span>
+      </div>
+      <button class="rounded-lg bg-white/10 hover:bg-white/15 px-3 py-1.5 text-xs font-bold ring-1 ring-white/10 transition"
+        data-copy="intro-code-1">Copy</button>
+    </div>
+
+    <div class="grid lg:grid-cols-2">
+      <div class="p-4">
+        <div class="text-xs font-bold text-slate-300/80 mb-2">Code</div>
+        <pre id="intro-code-1" class="code-area text-slate-100 whitespace-pre overflow-x-auto"><code># This is a single-line comment
+x = 10  # This is an inline comment
+print(x)</code></pre>
+      </div>
+      <div class="p-4 border-t lg:border-t-0 lg:border-l border-white/10 bg-white/5">
+        <div class="text-xs font-bold text-slate-300/80 mb-2">OUTPUT</div>
+        <pre class="out-area text-emerald-200 whitespace-pre overflow-x-auto">10</pre>
+      </div>
+    </div>
+  </div>
+
+  <h3 class="mt-10 text-xl font-extrabold">২) Multi line comment বা Docstring</h3>
+  <p class="mt-3 text-slate-200/85">
+    Python এ আলাদা করে block comment নেই।
+    তবে অনেক লাইন লিখতে চাইলে <span class="font-mono">""" ... """</span> ব্যবহার করা যায়।
+    বিশেষ করে function বা class এর শুরুতে থাকলে এটাকে Docstring বলে কারণ এটা function কী কাজ করে সেটা ডকুমেন্ট করে।
+  </p>
+
+  <div class="mt-4 editor">
+    <div class="editor-top px-4 py-3 flex items-center justify-between gap-3">
+      <div class="flex items-center gap-2">
+        <span class="dot" style="background:#ff5f57"></span>
+        <span class="dot" style="background:#febc2e"></span>
+        <span class="dot" style="background:#28c840"></span>
+        <span class="ml-2 text-xs text-slate-200/85">docstring.py</span>
+      </div>
+      <button class="rounded-lg bg-white/10 hover:bg-white/15 px-3 py-1.5 text-xs font-bold ring-1 ring-white/10 transition"
+        data-copy="intro-code-2">Copy</button>
+    </div>
+
+    <div class="grid lg:grid-cols-2">
+      <div class="p-4">
+        <div class="text-xs font-bold text-slate-300/80 mb-2">Code</div>
+        <pre id="intro-code-2" class="code-area text-slate-100 whitespace-pre overflow-x-auto"><code>def add(a, b):
+    """
+    Adds two numbers and returns the result.
+
+    Parameters:
+        a (int/float): first number
+        b (int/float): second number
+    Returns:
+        int/float: sum of a and b
+    """
+    return a + b
+
+print(add(5, 3))</code></pre>
+      </div>
+      <div class="p-4 border-t lg:border-t-0 lg:border-l border-white/10 bg-white/5">
+        <div class="text-xs font-bold text-slate-300/80 mb-2">OUTPUT</div>
+        <pre class="out-area text-emerald-200 whitespace-pre overflow-x-auto">8</pre>
+      </div>
+    </div>
+  </div>
+
+  <h3 class="mt-10 text-xl font-extrabold">৩) TODO এবং NOTE</h3>
+  <p class="mt-3 text-slate-200/85">
+    কোড লিখতে লিখতে অনেক সময় মনে হবে পরে এটা ঠিক করবো বা পরে উন্নতি করবো।
+    তখন TODO বা NOTE লিখে রাখা ভাল অভ্যাস।
+  </p>
+
+  <div class="mt-4 editor">
+    <div class="editor-top px-4 py-3 flex items-center justify-between gap-3">
+      <div class="flex items-center gap-2">
+        <span class="dot" style="background:#ff5f57"></span>
+        <span class="dot" style="background:#febc2e"></span>
+        <span class="dot" style="background:#28c840"></span>
+        <span class="ml-2 text-xs text-slate-200/85">todo_note.py</span>
+      </div>
+      <button class="rounded-lg bg-white/10 hover:bg-white/15 px-3 py-1.5 text-xs font-bold ring-1 ring-white/10 transition"
+        data-copy="intro-code-3">Copy</button>
+    </div>
+
+    <div class="grid lg:grid-cols-2">
+      <div class="p-4">
+        <div class="text-xs font-bold text-slate-300/80 mb-2">Code</div>
+        <pre id="intro-code-3" class="code-area text-slate-100 whitespace-pre overflow-x-auto"><code># TODO: Add input validation later
+# NOTE: This is a simple example for beginners
+
+price = 100
+tax = 0.15
+total = price + (price * tax)
+print("Total:", total)</code></pre>
+      </div>
+      <div class="p-4 border-t lg:border-t-0 lg:border-l border-white/10 bg-white/5">
+        <div class="text-xs font-bold text-slate-300/80 mb-2">OUTPUT</div>
+        <pre class="out-area text-emerald-200 whitespace-pre overflow-x-auto">Total: 115.0</pre>
+      </div>
+    </div>
+  </div>
+
+  <h3 class="mt-10 text-xl font-extrabold">৪) Good vs Bad comments</h3>
+  <div class="mt-4 rounded-xl bg-white/5 ring-1 ring-white/10 p-5 text-slate-200/85">
+    <ul class="list-disc pl-6 space-y-2">
+      <li><span class="font-bold">ভালো কমেন্ট</span> কেন লেখা হয়েছে উদ্দেশ্য বা লজিক বোঝায়</li>
+      <li><span class="font-bold">খারাপ কমেন্ট</span> obvious জিনিস বলে যেমন <span class="font-mono">x = 10  # x is 10</span></li>
+      <li>কমেন্ট প্রয়োজন মতো দাও কোডও যেন পরিষ্কার থাকে</li>
+      <li>কোড বদলালে কমেন্টও আপডেট করো outdated কমেন্ট সমস্যা করে</li>
+    </ul>
+  </div>
+
+  <h3 class="mt-10 text-xl font-extrabold">Common Mistakes</h3>
+  <div class="mt-4 rounded-xl bg-red-500/10 ring-1 ring-red-400/20 p-5 text-slate-200/85">
+    <ul class="list-disc pl-6 space-y-2">
+      <li>কমেন্ট দিয়ে গুরুত্বপূর্ণ code ঢেকে রাখা পরে সরিয়ে ফেলো বা ঠিক করো</li>
+      <li>কোড বদলানোর পর পুরনো কমেন্ট আপডেট না করা</li>
+      <li>অতিরিক্ত কমেন্ট লিখে কোড জটিল করে ফেলা</li>
+    </ul>
+  </div>
+
+  <div class="mt-10 rounded-xl bg-white/5 ring-1 ring-white/10 p-5">
+    <div class="font-extrabold">অনুশীলন</div>
+    <ol class="mt-3 list-decimal pl-6 text-slate-200/85 space-y-2">
+      <li>একটা ছোট প্রোগ্রাম লেখো যেখানে ৩টা ভ্যারিয়েবল থাকবে এবং প্রতিটা অংশে দরকারি কমেন্ট দাও</li>
+      <li>একটা add() ফাংশন বানিয়ে docstring লিখো parameters এবং returns সহ</li>
+      <li>তোমার আগের কোনো কোড দেখে ৩টা TODO লিখে রাখো পরে কী উন্নতি করবে</li>
+    </ol>
+  </div>
+</section>

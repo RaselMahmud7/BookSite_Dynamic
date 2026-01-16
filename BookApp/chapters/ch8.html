@@ -1,0 +1,228 @@
+<section class="reveal rounded-2xl border border-white/10 bg-white/5 p-6 sm:p-8">
+  <h2 class="text-2xl sm:text-3xl font-extrabold">অধ্যায় ৮: স্কোপ (Scope)</h2>
+
+  <p class="mt-4 text-slate-200/85">
+    স্কোপ মানে হলো একটি ভ্যারিয়েবলকে <span class="font-bold">কোথায় থেকে access করা যাবে</span>।
+    সহজভাবে বললে, ভ্যারিয়েবলটা কোথায় “দেখা যাবে” এবং কোথায় কাজ করবে।
+    Python যখন কোনো ভ্যারিয়েবল খুঁজে পায় না, তখন সে একটা নির্দিষ্ট ক্রমে খোঁজে
+    যাকে বলে <span class="font-bold">LEGB Rule</span>।
+  </p>
+
+  <ul class="mt-4 list-disc pl-6 text-slate-200/85 space-y-2">
+    <li><b>L</b> (Local) ফাংশনের ভিতরের স্কোপ</li>
+    <li><b>E</b> (Enclosing) বাইরের ফাংশনের স্কোপ</li>
+    <li><b>G</b> (Global) ফাইল বা মডিউল লেভেল স্কোপ</li>
+    <li><b>B</b> (Built in) Python built in যেমন print, len ইত্যাদি</li>
+  </ul>
+
+  <div class="mt-5 rounded-xl bg-emerald-500/10 ring-1 ring-emerald-400/20 p-4 text-slate-200/90">
+    স্কোপ বুঝলে naming conflict কমে, কোড পরিষ্কার থাকে, এবং debugging সহজ হয়।
+  </div>
+
+  <h3 class="mt-10 text-xl font-extrabold">Local Scope</h3>
+  <p class="mt-3 text-slate-200/85">
+    কোনো ফাংশনের ভিতরে যে ভ্যারিয়েবল তৈরি হয়, সেটা সাধারণত শুধু ওই ফাংশনের ভিতরেই কাজ করে।
+    বাইরে থেকে সেটা দেখা যায় না।
+  </p>
+
+  <div class="mt-4 editor">
+    <div class="editor-top px-4 py-3 flex items-center justify-between gap-3">
+      <div class="flex items-center gap-2">
+        <span class="dot" style="background:#ff5f57"></span>
+        <span class="dot" style="background:#febc2e"></span>
+        <span class="dot" style="background:#28c840"></span>
+        <span class="ml-2 text-xs text-slate-200/85">local_scope.py</span>
+      </div>
+      <button class="rounded-lg bg-white/10 hover:bg-white/15 px-3 py-1.5 text-xs font-bold ring-1 ring-white/10 transition"
+        data-copy="ch8-code-1">Copy</button>
+    </div>
+
+    <div class="grid lg:grid-cols-2">
+      <div class="p-4">
+        <div class="text-xs font-bold text-slate-300/80 mb-2">CODE (English)</div>
+        <pre id="ch8-code-1" class="code-area text-slate-100 whitespace-pre overflow-x-auto"><code>def show_number():
+    x = 10
+    print("Inside function:", x)
+
+show_number()
+# print(x)  # Error because x is local</code></pre>
+      </div>
+      <div class="p-4 border-t lg:border-t-0 lg:border-l border-white/10 bg-white/5">
+        <div class="text-xs font-bold text-slate-300/80 mb-2">OUTPUT</div>
+        <pre class="out-area text-emerald-200 whitespace-pre overflow-x-auto">Inside function: 10</pre>
+      </div>
+    </div>
+  </div>
+
+  <h3 class="mt-10 text-xl font-extrabold">Global Scope</h3>
+  <p class="mt-3 text-slate-200/85">
+    ফাংশনের বাইরে যে ভ্যারিয়েবল লেখা হয়, সেটাকে global বলা হয়।
+    ফাইলের যেকোনো জায়গা থেকে এটাকে পড়া যায়।
+    কিন্তু global ভ্যারিয়েবলকে ফাংশনের ভিতরে change করতে গেলে সতর্ক থাকতে হয়।
+  </p>
+
+  <div class="mt-4 editor">
+    <div class="editor-top px-4 py-3 flex items-center justify-between gap-3">
+      <div class="flex items-center gap-2">
+        <span class="dot" style="background:#ff5f57"></span>
+        <span class="dot" style="background:#febc2e"></span>
+        <span class="dot" style="background:#28c840"></span>
+        <span class="ml-2 text-xs text-slate-200/85">global_scope.py</span>
+      </div>
+      <button class="rounded-lg bg-white/10 hover:bg-white/15 px-3 py-1.5 text-xs font-bold ring-1 ring-white/10 transition"
+        data-copy="ch8-code-2">Copy</button>
+    </div>
+
+    <div class="grid lg:grid-cols-2">
+      <div class="p-4">
+        <div class="text-xs font-bold text-slate-300/80 mb-2">CODE (English)</div>
+        <pre id="ch8-code-2" class="code-area text-slate-100 whitespace-pre overflow-x-auto"><code>count = 5
+
+def show_count():
+    print("Count:", count)
+
+show_count()</code></pre>
+      </div>
+      <div class="p-4 border-t lg:border-t-0 lg:border-l border-white/10 bg-white/5">
+        <div class="text-xs font-bold text-slate-300/80 mb-2">OUTPUT</div>
+        <pre class="out-area text-emerald-200 whitespace-pre overflow-x-auto">Count: 5</pre>
+      </div>
+    </div>
+  </div>
+
+  <h3 class="mt-10 text-xl font-extrabold">global keyword</h3>
+  <p class="mt-3 text-slate-200/85">
+    ফাংশনের ভিতর থেকে global ভ্যারিয়েবলকে change করতে হলে <span class="font-bold">global</span> লিখতে হয়।
+    না লিখলে Python ধরে নেয় এটা নতুন local ভ্যারিয়েবল।
+  </p>
+
+  <div class="mt-4 editor">
+    <div class="editor-top px-4 py-3 flex items-center justify-between gap-3">
+      <div class="flex items-center gap-2">
+        <span class="dot" style="background:#ff5f57"></span>
+        <span class="dot" style="background:#febc2e"></span>
+        <span class="dot" style="background:#28c840"></span>
+        <span class="ml-2 text-xs text-slate-200/85">global_keyword.py</span>
+      </div>
+      <button class="rounded-lg bg-white/10 hover:bg-white/15 px-3 py-1.5 text-xs font-bold ring-1 ring-white/10 transition"
+        data-copy="ch8-code-3">Copy</button>
+    </div>
+
+    <div class="grid lg:grid-cols-2">
+      <div class="p-4">
+        <div class="text-xs font-bold text-slate-300/80 mb-2">CODE (English)</div>
+        <pre id="ch8-code-3" class="code-area text-slate-100 whitespace-pre overflow-x-auto"><code>score = 10
+
+def add_points():
+    global score
+    score = score + 5
+
+add_points()
+print("Score:", score)</code></pre>
+      </div>
+      <div class="p-4 border-t lg:border-t-0 lg:border-l border-white/10 bg-white/5">
+        <div class="text-xs font-bold text-slate-300/80 mb-2">OUTPUT</div>
+        <pre class="out-area text-emerald-200 whitespace-pre overflow-x-auto">Score: 15</pre>
+      </div>
+    </div>
+  </div>
+
+  <h3 class="mt-10 text-xl font-extrabold">Enclosing Scope এবং nonlocal keyword</h3>
+  <p class="mt-3 text-slate-200/85">
+    যখন একটা ফাংশনের ভিতরে আরেকটা ফাংশন থাকে, তখন ভেতরের ফাংশন বাইরের ফাংশনের ভ্যারিয়েবল পড়তে পারে।
+    এটাকে enclosing scope বলে।
+    আর যদি ভেতরের ফাংশন বাইরের ভ্যারিয়েবল change করতে চায়,
+    তখন <span class="font-bold">nonlocal</span> ব্যবহার করতে হয়।
+  </p>
+
+  <div class="mt-4 editor">
+    <div class="editor-top px-4 py-3 flex items-center justify-between gap-3">
+      <div class="flex items-center gap-2">
+        <span class="dot" style="background:#ff5f57"></span>
+        <span class="dot" style="background:#febc2e"></span>
+        <span class="dot" style="background:#28c840"></span>
+        <span class="ml-2 text-xs text-slate-200/85">nonlocal_example.py</span>
+      </div>
+      <button class="rounded-lg bg-white/10 hover:bg-white/15 px-3 py-1.5 text-xs font-bold ring-1 ring-white/10 transition"
+        data-copy="ch8-code-4">Copy</button>
+    </div>
+
+    <div class="grid lg:grid-cols-2">
+      <div class="p-4">
+        <div class="text-xs font-bold text-slate-300/80 mb-2">CODE (English)</div>
+        <pre id="ch8-code-4" class="code-area text-slate-100 whitespace-pre overflow-x-auto"><code>def outer():
+    message = "Hello"
+
+    def inner():
+        nonlocal message
+        message = "Hi"
+        print("Inner:", message)
+
+    inner()
+    print("Outer:", message)
+
+outer()</code></pre>
+      </div>
+      <div class="p-4 border-t lg:border-t-0 lg:border-l border-white/10 bg-white/5">
+        <div class="text-xs font-bold text-slate-300/80 mb-2">OUTPUT</div>
+        <pre class="out-area text-emerald-200 whitespace-pre overflow-x-auto">Inner: Hi
+Outer: Hi</pre>
+      </div>
+    </div>
+  </div>
+
+  <h3 class="mt-10 text-xl font-extrabold">Built in Scope</h3>
+  <p class="mt-3 text-slate-200/85">
+    Python এর কিছু built in নাম আছে যেমন print, len, sum ইত্যাদি।
+    এগুলো সবসময় available থাকে।
+    তাই এগুলোকে ভ্যারিয়েবল নাম হিসেবে ব্যবহার করলে confusion তৈরি হয়।
+  </p>
+
+  <div class="mt-4 editor">
+    <div class="editor-top px-4 py-3 flex items-center justify-between gap-3">
+      <div class="flex items-center gap-2">
+        <span class="dot" style="background:#ff5f57"></span>
+        <span class="dot" style="background:#febc2e"></span>
+        <span class="dot" style="background:#28c840"></span>
+        <span class="ml-2 text-xs text-slate-200/85">built_in_warning.py</span>
+      </div>
+      <button class="rounded-lg bg-white/10 hover:bg-white/15 px-3 py-1.5 text-xs font-bold ring-1 ring-white/10 transition"
+        data-copy="ch8-code-5">Copy</button>
+    </div>
+
+    <div class="grid lg:grid-cols-2">
+      <div class="p-4">
+        <div class="text-xs font-bold text-slate-300/80 mb-2">CODE (English)</div>
+        <pre id="ch8-code-5" class="code-area text-slate-100 whitespace-pre overflow-x-auto"><code>len = 10
+print(len)  # Works, but now len() function is lost
+
+# Better
+length = 10
+print(length)</code></pre>
+      </div>
+      <div class="p-4 border-t lg:border-t-0 lg:border-l border-white/10 bg-white/5">
+        <div class="text-xs font-bold text-slate-300/80 mb-2">OUTPUT</div>
+        <pre class="out-area text-emerald-200 whitespace-pre overflow-x-auto">10
+10</pre>
+      </div>
+    </div>
+  </div>
+
+  <h3 class="mt-10 text-xl font-extrabold">Beginner mistakes</h3>
+  <div class="mt-4 rounded-xl bg-red-500/10 ring-1 ring-red-400/20 p-5 text-slate-200/85">
+    <ul class="list-disc pl-6 space-y-2">
+      <li>ফাংশনের ভিতরে global ভ্যারিয়েবল change করে ফেললে debugging কঠিন হয়</li>
+      <li>একই নাম বারবার ব্যবহার করলে conflict হয় যেমন name, value, data</li>
+      <li>built in নাম overwrite করলে পরে error হতে পারে</li>
+    </ul>
+  </div>
+
+  <div class="mt-10 rounded-xl bg-white/5 ring-1 ring-white/10 p-5">
+    <div class="font-extrabold">অনুশীলন</div>
+    <ol class="mt-3 list-decimal pl-6 text-slate-200/85 space-y-2">
+      <li>একটা ফাংশন লেখো, ফাংশনের ভিতরে local ভ্যারিয়েবল বানাও এবং বাইরে থেকে access করার চেষ্টা করো</li>
+      <li>একটা global ভ্যারিয়েবল বানিয়ে ফাংশনের ভিতরে global keyword ব্যবহার করে change করো</li>
+      <li>একটা outer function এর ভিতরে inner function বানাও এবং nonlocal দিয়ে outer এর ভ্যারিয়েবল change করো</li>
+    </ol>
+  </div>
+</section>
